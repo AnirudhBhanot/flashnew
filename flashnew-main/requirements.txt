@@ -8,6 +8,8 @@ email-validator==2.1.1
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
 python-multipart==0.0.6
+aiohttp==3.9.5
+
 
 # ML dependencies
 numpy==2.2.4
