@@ -1,0 +1,44 @@
+services:
+  # Backend API Service
+  - type: web
+    name: flash-backend
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python api_server_unified.py"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: DISABLE_AUTH
+        value: true
+      - key: DEEPSEEK_API_KEY
+        value: sk-f68b7148243e4663a31386a5ea6093cf
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: MODEL_PATH
+        value: ./models/production_v45_fixed
+      - key: ENABLE_PATTERN_SYSTEM
+        value: true
+      - key: LOG_LEVEL
+        value: INFO
+    autoDeploy: true
+    
+  # Frontend Service  
+  - type: web
+    name: flash-frontend
+    runtime: node
+    rootDir: flash-frontend-apple
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: PORT
+        value: "3000"
+      - key: REACT_APP_API_URL
+        value: "https://flash-backend.onrender.com"
+    autoDeploy: true
+
+# Optional: PostgreSQL Database
+databases:
+  - name: flash-db
+    plan: free

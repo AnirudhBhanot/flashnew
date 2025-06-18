@@ -1,0 +1,323 @@
+.container {
+  padding: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 32px 0;
+}
+
+.industryTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.industryTab {
+  background: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    border-color: #999;
+    color: #000;
+  }
+
+  &.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+}
+
+.viewToggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:not(:last-child) {
+    border-right: 1px solid #e5e5e5;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.active {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+.marketShare {
+  padding: 24px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.shareChart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shareBar {
+  background-color: #000;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 4px;
+  position: relative;
+  min-width: fit-content;
+}
+
+.shareLabel {
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.shareRemaining {
+  background-color: #e5e5e5;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 4px;
+  flex: 1;
+
+  .shareLabel {
+    color: #666;
+  }
+}
+
+.competitors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.competitorCard {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #999;
+  }
+}
+
+.competitorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.competitorName {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+}
+
+.competitorStage {
+  font-size: 12px;
+  color: #666;
+}
+
+.competitorFunding {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.competitorDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detailList {
+  margin: 0;
+  padding: 0 0 0 16px;
+  list-style: disc;
+
+  li {
+    font-size: 13px;
+    color: #000;
+    line-height: 1.4;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.swot {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.swotGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.swotQuadrant {
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #999;
+  }
+}
+
+.quadrantTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+.swotList {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: disc;
+
+  li {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.swotInsight {
+  padding: 24px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.insightTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 12px 0;
+}
+
+.insightText {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.advantages {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.advantagesTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 20px 0;
+}
+
+.advantagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.advantage {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.advantageIcon {
+  font-size: 14px;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.advantageText {
+  font-size: 13px;
+  color: #000;
+  line-height: 1.5;
+  flex: 1;
+}

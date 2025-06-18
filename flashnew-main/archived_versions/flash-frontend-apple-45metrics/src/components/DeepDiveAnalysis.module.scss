@@ -1,0 +1,304 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.container {
+  margin-top: var(--spacing-xl);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.subtitle {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+// Pillar Grid
+.pillarGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.pillarCard {
+  padding: var(--spacing-lg);
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    @include card-shadow;
+    border-color: var(--color-primary-light);
+  }
+  
+  &.selected {
+    border-color: var(--color-primary);
+    @include card-shadow;
+  }
+}
+
+.pillarIcon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.pillarName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.pillarScore {
+  text-align: center;
+}
+
+.scoreValue {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.scoreBar {
+  height: 8px;
+  background: var(--background-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.scoreBarFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+// Detail Section
+.detailSection {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  overflow: hidden;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detailTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+// Sub-scores
+.subScoresSection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.subScores {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.subScore {
+  padding: var(--spacing-md);
+  background: var(--background-secondary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--background-tertiary);
+  }
+}
+
+.subScoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.subScoreName {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.subScoreValue {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.subScoreBar {
+  height: 6px;
+  background: var(--background-primary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.subScoreBarFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.subScoreDescription {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: var(--spacing-sm) 0 0 0;
+  line-height: 1.5;
+}
+
+// Analysis Grid
+.analysisGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.analysisSection {
+  padding: var(--spacing-md);
+  background: var(--background-secondary);
+  border-radius: var(--radius-md);
+}
+
+.analysisList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    padding: var(--spacing-sm) 0;
+    font-size: var(--font-size-md);
+    color: var(--text-primary);
+    
+    &::before {
+      content: '•';
+      margin-right: var(--spacing-sm);
+      color: var(--text-secondary);
+    }
+  }
+}
+
+// Benchmarks
+.benchmarkSection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.benchmarkTable {
+  background: var(--background-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.benchmarkHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--background-tertiary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.benchmarkRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--font-size-md);
+}
+
+.benchmarkMetric {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.benchmarkValue {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.benchmarkAvg {
+  color: var(--text-secondary);
+}
+
+.benchmarkTop {
+  color: var(--color-success);
+  font-weight: var(--font-weight-medium);
+}
+
+// Recommendations
+.recommendationsSection {
+  background: var(--background-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+.recommendationsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.recommendationItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  line-height: 1.5;
+  
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-primary);
+  }
+}

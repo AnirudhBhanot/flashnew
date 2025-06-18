@@ -1,0 +1,117 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    border-bottom-color: #d2d2d7;
+  }
+
+  &:focus {
+    border-bottom-color: #86868b;
+  }
+
+  svg {
+    color: #86868b;
+    transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  }
+}
+
+.value {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+.placeholder {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #d2d2d7;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  padding: 24px 32px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    background: #f5f5f7;
+  }
+
+  &.selected {
+    background: #f5f5f7;
+
+    .optionLabel {
+      color: #000;
+      font-weight: 500;
+    }
+  }
+}
+
+.optionLabel {
+  display: block;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+}
+
+.optionDescription {
+  display: block;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #86868b;
+}

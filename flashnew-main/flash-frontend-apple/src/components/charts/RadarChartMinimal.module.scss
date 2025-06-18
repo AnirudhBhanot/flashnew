@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.chart {
+  display: block;
+}
+
+.axis {
+  stroke: #e5e5e5;
+  stroke-width: 1;
+}
+
+.dataArea {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.label {
+  font-size: 12px;
+  fill: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.legendItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.legendLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+.legendValue {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .legend {
+    grid-template-columns: 1fr;
+    max-width: 240px;
+  }
+}

@@ -1,0 +1,266 @@
+.container {
+  position: relative;
+  margin-bottom: var(--apple-spacing-m);
+  
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 16px;
+  top: 17px;
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-tertiary);
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+  background-color: var(--apple-bg-primary);
+  padding: 0 4px;
+  z-index: 1;
+  
+  &.floating {
+    top: -9px;
+    font-size: var(--apple-text-caption1);
+    color: var(--apple-label-secondary);
+  }
+}
+
+.staticLabel {
+  display: block;
+  font-size: var(--apple-text-body);
+  font-weight: var(--apple-font-weight-medium);
+  color: var(--apple-label-primary);
+  margin-bottom: var(--apple-spacing-xs);
+}
+
+.required {
+  color: var(--apple-red);
+  margin-left: 2px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 16px;
+  background-color: var(--apple-fill-tertiary);
+  border: 1px solid transparent;
+  border-radius: var(--apple-radius-large);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  
+  &:hover:not(.disabled) {
+    background-color: var(--apple-fill-secondary);
+  }
+  
+  &:focus-within,
+  &.open {
+    border-color: var(--apple-blue);
+    background-color: var(--apple-bg-primary);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+  }
+  
+  &.error {
+    border-color: var(--apple-red);
+    
+    &:focus-within {
+      box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.2);
+    }
+  }
+}
+
+.value {
+  flex: 1;
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.placeholder {
+  color: var(--apple-label-tertiary);
+}
+
+.chevron {
+  color: var(--apple-label-secondary);
+  transition: transform 0.2s ease-out;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--apple-spacing-xs);
+  margin-top: var(--apple-spacing-s);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--apple-spacing-xs);
+  padding: 4px 8px 4px 12px;
+  background-color: var(--apple-blue);
+  color: white;
+  border-radius: var(--apple-radius-small);
+  font-size: var(--apple-text-caption1);
+  font-weight: var(--apple-font-weight-medium);
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+  
+  &:active {
+    transform: scale(0.9);
+  }
+  
+  svg {
+    color: white;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background-color: var(--apple-bg-elevated);
+  border-radius: var(--apple-radius-large);
+  box-shadow: var(--apple-shadow-large);
+  overflow: hidden;
+  z-index: 1000;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchWrapper {
+  position: relative;
+  padding: var(--apple-spacing-m);
+  border-bottom: 1px solid var(--apple-separator);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--apple-label-tertiary);
+  pointer-events: none;
+}
+
+.search {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px 0 36px;
+  background-color: var(--apple-fill-tertiary);
+  border: none;
+  border-radius: var(--apple-radius-medium);
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-primary);
+  
+  &::placeholder {
+    color: var(--apple-label-tertiary);
+  }
+  
+  &:focus {
+    outline: none;
+    background-color: var(--apple-fill-secondary);
+  }
+}
+
+.options {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--apple-spacing-xs) 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-s);
+  padding: var(--apple-spacing-s) var(--apple-spacing-m);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  
+  &:hover:not(.optionDisabled) {
+    background-color: var(--apple-fill-quaternary);
+  }
+  
+  &.selected {
+    color: var(--apple-blue);
+    font-weight: var(--apple-font-weight-medium);
+  }
+  
+  &.optionDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--apple-separator-opaque);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-out;
+  
+  .option.selected & {
+    background-color: var(--apple-blue);
+    border-color: var(--apple-blue);
+  }
+  
+  svg {
+    color: white;
+  }
+}
+
+.noOptions {
+  padding: var(--apple-spacing-xl);
+  text-align: center;
+  color: var(--apple-label-tertiary);
+  font-size: var(--apple-text-footnote);
+}
+
+.footer {
+  padding: var(--apple-spacing-s) var(--apple-spacing-m);
+  border-top: 1px solid var(--apple-separator);
+  font-size: var(--apple-text-caption1);
+  color: var(--apple-label-secondary);
+  text-align: center;
+}
+
+.helper,
+.error {
+  margin-top: var(--apple-spacing-xs);
+  font-size: var(--apple-text-caption1);
+  line-height: 1.4;
+}
+
+.helper {
+  color: var(--apple-label-secondary);
+}
+
+.error {
+  color: var(--apple-red);
+}

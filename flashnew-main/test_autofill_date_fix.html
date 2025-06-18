@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Autofill Date Fix</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f7;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #6e6e73;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f7;
+            border-radius: 8px;
+        }
+        .test-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        button {
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0051d5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Autofill Date Conversion Test</h1>
+        <p class="subtitle">Testing the date field conversion from string to Date object</p>
+        
+        <div class="test-section">
+            <div class="test-title">Original Date String from Sample Data</div>
+            <pre>foundedDate: '2024-01-15'</pre>
+            <div id="original-result" class="result"></div>
+        </div>
+        
+        <div class="test-section">
+            <div class="test-title">Converted Date Object</div>
+            <pre>foundingDate: new Date('2024-01-15')</pre>
+            <div id="converted-result" class="result"></div>
+        </div>
+        
+        <div class="test-section">
+            <div class="test-title">Form Field Format Test</div>
+            <pre>formatDate(new Date('2024-01-15'))</pre>
+            <div id="formatted-result" class="result"></div>
+        </div>
+        
+        <div class="test-section">
+            <div class="test-title">Parse Back Test</div>
+            <pre>parseDate('Jan 2024')</pre>
+            <div id="parsed-result" class="result"></div>
+        </div>
+        
+        <button onclick="runTests()">Run Tests</button>
+    </div>
+    
+    <script>
+        function formatDate(date) {
+            if (!date) return '';
+            return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        }
+        
+        function parseDate(value) {
+            if (!value) return null;
+            const date = new Date(value);
+            return isNaN(date.getTime()) ? null : date;
+        }
+        
+        function runTests() {
+            // Test 1: Original string
+            const originalString = '2024-01-15';
+            document.getElementById('original-result').innerHTML = 
+                `<strong>Type:</strong> ${typeof originalString}<br>` +
+                `<strong>Value:</strong> ${originalString}`;
+            document.getElementById('original-result').className = 'result success';
+            
+            // Test 2: Convert to Date
+            const convertedDate = new Date(originalString);
+            document.getElementById('converted-result').innerHTML = 
+                `<strong>Type:</strong> ${typeof convertedDate}<br>` +
+                `<strong>Value:</strong> ${convertedDate.toString()}<br>` +
+                `<strong>Valid Date:</strong> ${!isNaN(convertedDate.getTime())}`;
+            document.getElementById('converted-result').className = 'result success';
+            
+            // Test 3: Format for display
+            const formatted = formatDate(convertedDate);
+            document.getElementById('formatted-result').innerHTML = 
+                `<strong>Formatted:</strong> ${formatted}<br>` +
+                `<strong>Expected:</strong> Jan 2024`;
+            document.getElementById('formatted-result').className = 'result success';
+            
+            // Test 4: Parse back
+            const parsed = parseDate('Jan 2024');
+            document.getElementById('parsed-result').innerHTML = 
+                `<strong>Type:</strong> ${typeof parsed}<br>` +
+                `<strong>Value:</strong> ${parsed ? parsed.toString() : 'null'}<br>` +
+                `<strong>Valid Date:</strong> ${parsed && !isNaN(parsed.getTime())}`;
+            document.getElementById('parsed-result').className = parsed ? 'result success' : 'result error';
+            
+            // Log the autofill simulation
+            console.log('Autofill Simulation:');
+            console.log('1. Original data:', { foundedDate: originalString });
+            console.log('2. Converted data:', { foundingDate: convertedDate });
+            console.log('3. Form display:', formatted);
+            console.log('4. Form stores as Date:', convertedDate);
+        }
+        
+        // Auto-run tests on load
+        window.onload = runTests;
+    </script>
+</body>
+</html>

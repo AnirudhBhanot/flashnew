@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS",
+  "issues": [],
+  "warnings": [
+    "pre_seed success rate 15.9% outside expected range 5-15%",
+    "series_a success rate 16.1% outside expected range 30-50%",
+    "series_b success rate 16.1% outside expected range 45-65%"
+  ],
+  "summary": {
+    "total_companies": 100000,
+    "success_rate": 0.16,
+    "stage_distribution": {
+      "pre_seed": 35030,
+      "seed": 25030,
+      "series_a": 20158,
+      "series_b": 11882,
+      "series_c": 4915,
+      "series_d": 2037,
+      "series_e_plus": 948
+    }
+  }
+}

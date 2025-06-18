@@ -1,0 +1,1304 @@
+.michelinAnalysis {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loadingState {
+  text-align: center;
+  padding: 80px 0;
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 24px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #666;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorState {
+  text-align: center;
+  padding: 60px 0;
+
+  h3 {
+    color: #dc3545;
+    margin-bottom: 16px;
+  }
+
+  .retryButton {
+    margin-top: 24px;
+    padding: 12px 24px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 24px;
+
+  .titleSection {
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1D1D1F;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .company {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #000;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.executiveBriefing {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1D1D1F;
+  }
+
+  p {
+    line-height: 1.6;
+    color: #333;
+  }
+}
+
+.phaseNavigation {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 8px;
+  border-radius: 16px;
+
+  .phaseTab {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+
+    .phaseNumber {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .phaseTitle {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &.active {
+      background: #000;
+      color: white;
+
+      .phaseNumber,
+      .phaseTitle {
+        color: white;
+      }
+    }
+  }
+}
+
+.phaseContainer {
+  min-height: 400px;
+}
+
+.phaseContent {
+  .section {
+    margin-bottom: 32px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 16px;
+    padding: 24px;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1D1D1F;
+    }
+
+    .narrative {
+      line-height: 1.6;
+      color: #333;
+    }
+  }
+
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .toggle {
+      font-size: 24px;
+      color: #666;
+      font-weight: 300;
+    }
+  }
+
+  .sectionContent {
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// BCG Matrix Styles
+.bcgPosition {
+  text-align: center;
+  margin-bottom: 24px;
+
+  .positionBadge {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-bottom: 16px;
+
+    &[data-position="star"] {
+      background: #4CAF50;
+      color: white;
+    }
+
+    &[data-position="cash cow"] {
+      background: #2196F3;
+      color: white;
+    }
+
+    &[data-position="question mark"] {
+      background: #FF9800;
+      color: white;
+    }
+
+    &[data-position="dog"] {
+      background: #F44336;
+      color: white;
+    }
+  }
+
+  .metrics {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 16px;
+    color: #666;
+  }
+}
+
+.implications,
+.actionItems {
+  margin-top: 24px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+
+      &:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #666;
+      }
+    }
+  }
+}
+
+// Porter's Five Forces Styles
+.forcesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+
+  .forceCard {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1D1D1F;
+    }
+
+    .intensity {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+
+      &[data-level="low"] {
+        background: #E8F5E9;
+        color: #2E7D32;
+      }
+
+      &[data-level="medium"] {
+        background: #FFF3E0;
+        color: #E65100;
+      }
+
+      &[data-level="high"] {
+        background: #FFEBEE;
+        color: #C62828;
+      }
+    }
+
+    .score {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 4px 0;
+        font-size: 14px;
+        color: #555;
+      }
+    }
+  }
+}
+
+.overallAssessment {
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1D1D1F;
+  }
+
+  .attractiveness {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    &[data-level="low"] {
+      background: #FFEBEE;
+      color: #C62828;
+    }
+
+    &[data-level="medium"] {
+      background: #FFF3E0;
+      color: #E65100;
+    }
+
+    &[data-level="high"] {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+
+      &:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #666;
+      }
+    }
+  }
+}
+
+// SWOT Analysis Styles
+.swotGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+
+  .swotQuadrant {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    &[data-type="strengths"] h4 {
+      color: #2E7D32;
+    }
+
+    &[data-type="weaknesses"] h4 {
+      color: #C62828;
+    }
+
+    &[data-type="opportunities"] h4 {
+      color: #1565C0;
+    }
+
+    &[data-type="threats"] h4 {
+      color: #E65100;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #333;
+
+        strong {
+          font-weight: 600;
+        }
+
+        span {
+          color: #666;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+.priorities {
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1D1D1F;
+  }
+
+  ol {
+    padding-left: 20px;
+
+    li {
+      padding: 6px 0;
+      color: #333;
+    }
+  }
+}
+
+// Ansoff Matrix Styles
+.ansoffGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+
+  .ansoffQuadrant {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1D1D1F;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .details {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: #888;
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 4px 0;
+        font-size: 14px;
+        color: #555;
+        padding-left: 16px;
+        position: relative;
+
+        &:before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: #888;
+        }
+      }
+    }
+  }
+}
+
+.recommendation {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1D1D1F;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: #333;
+  }
+
+  ol {
+    padding-left: 20px;
+
+    li {
+      padding: 4px 0;
+      color: #555;
+    }
+  }
+}
+
+// Blue Ocean Strategy Styles
+.fourActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+
+  .actionBlock {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    &[data-action="eliminate"] h4 {
+      color: #C62828;
+    }
+
+    &[data-action="reduce"] h4 {
+      color: #E65100;
+    }
+
+    &[data-action="raise"] h4 {
+      color: #1565C0;
+    }
+
+    &[data-action="create"] h4 {
+      color: #2E7D32;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 4px 0;
+        font-size: 14px;
+        color: #555;
+      }
+    }
+  }
+}
+
+.newMarkets {
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1D1D1F;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+
+      &:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #2E7D32;
+      }
+    }
+  }
+}
+
+// Growth Scenarios Styles
+.scenariosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+  .scenarioCard {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    &[data-risk="conservative"] h4 {
+      color: #2E7D32;
+    }
+
+    &[data-risk="moderate"] h4 {
+      color: #1565C0;
+    }
+
+    &[data-risk="aggressive"] h4 {
+      color: #E65100;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .scenarioMetrics {
+      background: rgba(0, 0, 0, 0.02);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+
+      div {
+        padding: 4px 0;
+        font-size: 14px;
+        color: #555;
+      }
+    }
+
+    h5 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+
+      li {
+        padding: 4px 0;
+        font-size: 13px;
+        color: #666;
+        padding-left: 16px;
+        position: relative;
+
+        &:before {
+          content: "•";
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.recommendedDirection {
+  background: #000;
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+// Balanced Scorecard Styles
+.scorecardGrid {
+  display: grid;
+  gap: 24px;
+
+  .scorecardPerspective {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1D1D1F;
+    }
+
+    .scorecardContent {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+
+      > div {
+        h5 {
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 8px;
+          color: #666;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            padding: 4px 0;
+            font-size: 13px;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+}
+
+// OKR Styles
+.okrQuarter {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1D1D1F;
+  }
+
+  .objective {
+    margin-bottom: 20px;
+
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .keyResults {
+      .keyResult {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        > span {
+          font-size: 14px;
+          color: #555;
+        }
+
+        .progress {
+          display: flex;
+          gap: 16px;
+          font-size: 13px;
+          color: #888;
+        }
+      }
+    }
+  }
+}
+
+// Resource Requirements Styles
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+  .resourceCategory {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1D1D1F;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .timeline {
+          font-size: 13px;
+          color: #888;
+        }
+
+        .cost {
+          font-size: 13px;
+          color: #666;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .financialMetrics {
+      div {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #555;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// Risk Mitigation Styles
+.riskGrid {
+  display: grid;
+  gap: 20px;
+
+  .riskCard {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1D1D1F;
+    }
+
+    .riskMetrics {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+
+      span {
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+
+        &.impact {
+          &[data-level="low"] {
+            background: #E8F5E9;
+            color: #2E7D32;
+          }
+
+          &[data-level="medium"] {
+            background: #FFF3E0;
+            color: #E65100;
+          }
+
+          &[data-level="high"] {
+            background: #FFEBEE;
+            color: #C62828;
+          }
+        }
+
+        &.likelihood {
+          &[data-level="low"] {
+            background: #E8F5E9;
+            color: #2E7D32;
+          }
+
+          &[data-level="medium"] {
+            background: #FFF3E0;
+            color: #E65100;
+          }
+
+          &[data-level="high"] {
+            background: #FFEBEE;
+            color: #C62828;
+          }
+        }
+      }
+    }
+
+    .riskActions {
+      h5 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #666;
+      }
+
+      p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+// Success Metrics Styles
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+
+  .metricCard {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1D1D1F;
+    }
+
+    .metricDetails {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      span {
+        font-size: 14px;
+        color: #666;
+
+        &.type {
+          text-transform: capitalize;
+          color: #888;
+        }
+
+        &.target {
+          font-weight: 500;
+          color: #333;
+        }
+
+        &.frequency {
+          font-style: italic;
+          color: #888;
+        }
+      }
+    }
+  }
+}
+
+// Footer Styles
+.footer {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendations,
+  .successFactors,
+  .nextSteps {
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1D1D1F;
+    }
+
+    ol,
+    ul {
+      padding-left: 20px;
+
+      li {
+        padding: 6px 0;
+        color: #333;
+      }
+    }
+
+    ul {
+      list-style: disc;
+    }
+  }
+
+  .nextSteps {
+    grid-column: 1 / -1;
+
+    .stepTimeline {
+      margin-bottom: 20px;
+
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #666;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          padding: 6px 0;
+          padding-left: 20px;
+          position: relative;
+
+          &:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .michelinAnalysis {
+    padding: 20px;
+  }
+
+  .phaseNavigation {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .forcesGrid,
+  .swotGrid,
+  .ansoffGrid,
+  .scenariosGrid,
+  .resourcesGrid,
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fourActions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Phase-by-phase loading states
+.phaseTab {
+  position: relative;
+  
+  &.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &.pending {
+    opacity: 0.8;
+  }
+  
+  &.loading {
+    .phaseLoader {
+      display: inline-block;
+      margin-left: 8px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+  }
+  
+  &.completed {
+    .phaseCheck {
+      display: inline-block;
+      margin-left: 8px;
+      color: #28a745;
+    }
+  }
+  
+  &.error {
+    .phaseError {
+      display: inline-block;
+      margin-left: 8px;
+      color: #dc3545;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.phaseLoader,
+.phaseCheck,
+.phaseError {
+  display: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phaseLoading,
+.phaseLocked,
+.phaseError {
+  text-align: center;
+  padding: 80px 40px;
+  
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 24px;
+  }
+  
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 24px;
+  }
+}
+
+.phaseAction {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  
+  .continueButton {
+    background: #000;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:hover {
+      background: #333;
+      transform: translateX(4px);
+    }
+  }
+}
+.valueInnovation {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(0, 122, 255, 0.05);
+  border-radius: 12px;
+  
+  h4 {
+    color: #007aff;
+    margin-bottom: 12px;
+  }
+  
+  p {
+    color: #1d1d1f;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+.blueOceanOpportunity {
+  margin-top: 24px;
+  
+  h4 {
+    margin-bottom: 16px;
+    color: #1d1d1f;
+  }
+  
+  .opportunityGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    
+    > div {
+      padding: 16px;
+      background: #f5f5f7;
+      border-radius: 8px;
+      
+      strong {
+        display: block;
+        color: #1d1d1f;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      
+      p {
+        color: #6e6e73;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+  }
+}

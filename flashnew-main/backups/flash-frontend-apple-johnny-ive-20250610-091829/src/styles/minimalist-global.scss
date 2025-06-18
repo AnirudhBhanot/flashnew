@@ -1,0 +1,304 @@
+/* Johnny Ive-Inspired Minimalist Design System */
+/* Ultra-clean, typography-focused, with extreme attention to detail */
+
+:root {
+  /* Minimalist Color Palette */
+  --minimal-pure-white: #ffffff;
+  --minimal-pure-black: #000000;
+  --minimal-text-primary: #1d1d1f;
+  --minimal-text-secondary: #86868b;
+  --minimal-text-tertiary: #d2d2d7;
+  --minimal-surface-light: #f5f5f7;
+  --minimal-surface-lighter: #fafafa;
+  --minimal-accent: #007aff;
+  --minimal-success: #34c759;
+  --minimal-error: #ff3b30;
+  
+  /* Minimal Spacing System */
+  --minimal-space-nano: 4px;
+  --minimal-space-micro: 8px;
+  --minimal-space-small: 16px;
+  --minimal-space-medium: 24px;
+  --minimal-space-large: 48px;
+  --minimal-space-xlarge: 80px;
+  --minimal-space-xxlarge: 120px;
+  
+  /* Typography Scale */
+  --minimal-font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  --minimal-font-text: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --minimal-size-hero: 80px;
+  --minimal-size-title: 48px;
+  --minimal-size-subtitle: 32px;
+  --minimal-size-large: 24px;
+  --minimal-size-body: 20px;
+  --minimal-size-small: 16px;
+  --minimal-size-tiny: 14px;
+  
+  /* Minimalist Animations */
+  --minimal-ease: cubic-bezier(0.25, 0, 0, 1);
+  --minimal-duration-fast: 0.3s;
+  --minimal-duration-medium: 0.6s;
+  --minimal-duration-slow: 0.8s;
+  
+  /* Subtle Shadows */
+  --minimal-shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --minimal-shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --minimal-shadow-medium: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --minimal-shadow-large: 0 20px 80px rgba(0, 0, 0, 0.12);
+}
+
+/* Typography-First Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+
+body {
+  font-family: var(--minimal-font-text);
+  font-size: var(--minimal-size-body);
+  line-height: 1.5;
+  color: var(--minimal-text-primary);
+  background: var(--minimal-pure-white);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Typography Classes */
+.minimal-hero {
+  font-family: var(--minimal-font-display);
+  font-size: var(--minimal-size-hero);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.minimal-title {
+  font-family: var(--minimal-font-display);
+  font-size: var(--minimal-size-title);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.minimal-subtitle {
+  font-family: var(--minimal-font-display);
+  font-size: var(--minimal-size-subtitle);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.minimal-large {
+  font-family: var(--minimal-font-text);
+  font-size: var(--minimal-size-large);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.minimal-body {
+  font-family: var(--minimal-font-text);
+  font-size: var(--minimal-size-body);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.minimal-small {
+  font-family: var(--minimal-font-text);
+  font-size: var(--minimal-size-small);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.minimal-tiny {
+  font-family: var(--minimal-font-text);
+  font-size: var(--minimal-size-tiny);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Minimalist Utilities */
+.minimal-secondary {
+  color: var(--minimal-text-secondary);
+}
+
+.minimal-tertiary {
+  color: var(--minimal-text-tertiary);
+}
+
+.minimal-surface {
+  background: var(--minimal-surface-light);
+}
+
+.minimal-center {
+  text-align: center;
+}
+
+.minimal-right {
+  text-align: right;
+}
+
+/* Minimalist Focus States */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--minimal-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Minimalist Selection */
+::selection {
+  background: var(--minimal-accent);
+  color: var(--minimal-pure-white);
+}
+
+/* Minimalist Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--minimal-duration-fast) var(--minimal-ease);
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* Minimalist Buttons */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--minimal-duration-fast) var(--minimal-ease);
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--minimal-text-tertiary);
+  border-radius: 1px;
+}
+
+/* Minimalist Animations */
+@keyframes minimalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes minimalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes minimalScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Minimalist Container */
+.minimal-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--minimal-space-large);
+  
+  @media (max-width: 768px) {
+    padding: 0 var(--minimal-space-medium);
+  }
+}
+
+/* Minimalist Page */
+.minimal-page {
+  min-height: 100vh;
+  background: var(--minimal-pure-white);
+  animation: minimalFadeIn var(--minimal-duration-medium) var(--minimal-ease);
+}
+
+/* Minimalist Helpers */
+.minimal-spacer-small {
+  height: var(--minimal-space-small);
+}
+
+.minimal-spacer-medium {
+  height: var(--minimal-space-medium);
+}
+
+.minimal-spacer-large {
+  height: var(--minimal-space-large);
+}
+
+.minimal-spacer-xlarge {
+  height: var(--minimal-space-xlarge);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --minimal-pure-white: #000000;
+    --minimal-pure-black: #ffffff;
+    --minimal-text-primary: #f5f5f7;
+    --minimal-text-secondary: #a1a1a6;
+    --minimal-text-tertiary: #48484a;
+    --minimal-surface-light: #1c1c1e;
+    --minimal-surface-lighter: #0a0a0a;
+    --minimal-accent: #0a84ff;
+    --minimal-success: #32d74b;
+    --minimal-error: #ff453a;
+    
+    --minimal-shadow-subtle: 0 1px 3px rgba(255, 255, 255, 0.02);
+    --minimal-shadow-soft: 0 4px 16px rgba(255, 255, 255, 0.03);
+    --minimal-shadow-medium: 0 10px 40px rgba(255, 255, 255, 0.04);
+    --minimal-shadow-large: 0 20px 80px rgba(255, 255, 255, 0.06);
+  }
+}

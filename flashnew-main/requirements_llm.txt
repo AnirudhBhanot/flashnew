@@ -1,0 +1,25 @@
+# Additional requirements for LLM integration
+
+# HTTP client for async requests
+aiohttp>=3.9.0
+
+# Retry logic with exponential backoff
+tenacity>=8.2.0
+
+# Redis for caching (optional but recommended)
+redis>=5.0.0
+
+# Async Redis client
+aioredis>=2.0.0
+
+# JSON schema validation
+jsonschema>=4.19.0
+
+# Rate limiting
+aiolimiter>=1.1.0
+
+# Monitoring and metrics (optional)
+prometheus-client>=0.19.0
+
+# Environment variable management
+python-dotenv>=1.0.0

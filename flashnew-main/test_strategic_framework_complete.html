@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strategic Framework Analysis Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .framework { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .position { font-weight: bold; color: #007bff; }
+        .insights { margin: 10px 0; }
+        .recommendations { margin: 10px 0; background: #f0f0f0; padding: 10px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Strategic Framework Analysis Test</h1>
+    <button onclick="testFrameworkAnalysis()">Test Framework Analysis</button>
+    <div id="results"></div>
+
+    <script>
+        async function testFrameworkAnalysis() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<p>Loading...</p>';
+
+            const testData = {
+                startup_data: {
+                    startup_name: "AI Innovation Labs",
+                    total_capital_raised_usd: 5000000,
+                    cash_on_hand_usd: 3000000,
+                    monthly_burn_usd: 200000,
+                    runway_months: 15,
+                    funding_stage: "series_a",
+                    investor_tier_primary: "tier_1",
+                    product_stage: "growth",
+                    proprietary_tech: true,
+                    patents_filed: 5,
+                    monthly_active_users: 25000,
+                    market_size_usd: 100000000000,
+                    market_growth_rate_annual: 30,
+                    competitor_count: 20,
+                    market_share_percentage: 2.5,
+                    customer_acquisition_cost_usd: 1000,
+                    lifetime_value_usd: 5000,
+                    team_size_full_time: 35,
+                    founders_industry_experience_years: 10,
+                    b2b_or_b2c: "b2b",
+                    sector: "saas"
+                },
+                framework_ids: ["bcg_matrix", "porters_five_forces", "swot_analysis", "ansoff_matrix"]
+            };
+
+            try {
+                const response = await fetch('http://localhost:8001/api/frameworks/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                displayResults(result);
+            } catch (error) {
+                resultsDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+
+        function displayResults(data) {
+            const resultsDiv = document.getElementById('results');
+            let html = '<h2>Framework Analysis Results</h2>';
+            
+            html += `<p>Total frameworks analyzed: ${data.summary.total_frameworks}</p>`;
+            html += `<p>Successful: ${data.summary.successful}, Failed: ${data.summary.failed}</p>`;
+
+            data.analyses.forEach(analysis => {
+                if (analysis.error) {
+                    html += `<div class="framework">
+                        <h3>${analysis.framework_id}</h3>
+                        <p style="color: red;">Error: ${analysis.error}</p>
+                    </div>`;
+                } else {
+                    html += `<div class="framework">
+                        <h3>${analysis.framework_name}</h3>
+                        <p class="position">Position: ${analysis.position}</p>
+                        <p>Score: ${analysis.score.toFixed(2)}</p>
+                        
+                        <div class="insights">
+                            <h4>Key Insights:</h4>
+                            <ul>
+                                ${analysis.insights.map(insight => `<li>${insight}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="recommendations">
+                            <h4>Recommendations:</h4>
+                            <ol>
+                                ${analysis.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                            </ol>
+                        </div>
+                        
+                        <details>
+                            <summary>Metrics</summary>
+                            <pre>${JSON.stringify(analysis.metrics, null, 2)}</pre>
+                        </details>
+                    </div>`;
+                }
+            });
+
+            resultsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

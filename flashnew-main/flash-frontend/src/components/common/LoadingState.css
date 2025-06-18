@@ -1,0 +1,291 @@
+/* LoadingState.css */
+
+/* Base loading state */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-state--default {
+  min-height: 400px;
+}
+
+.loading-state--inline {
+  flex-direction: row;
+  padding: 1rem;
+  gap: 0.75rem;
+  min-height: auto;
+}
+
+.loading-state--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 12, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+
+.loading-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Loading animation */
+.loading-animation {
+  margin-bottom: 2rem;
+}
+
+/* DNA Helix Animation */
+.dna-helix-container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.dna-helix {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.dna-pair {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dna-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  position: absolute;
+}
+
+.dna-node-left {
+  left: 20%;
+  animation: dna-wave-left 2s ease-in-out infinite;
+}
+
+.dna-node-right {
+  right: 20%;
+  animation: dna-wave-right 2s ease-in-out infinite;
+}
+
+.dna-connection {
+  width: 40%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.3);
+  position: absolute;
+  left: 30%;
+}
+
+.dna-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(59, 130, 246, 0.2), transparent);
+  transition: height 0.3s ease;
+}
+
+@keyframes dna-wave-left {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(-10px) scale(0.8); }
+}
+
+@keyframes dna-wave-right {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(10px) scale(0.8); }
+}
+
+/* Simple spinner for inline */
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(59, 130, 246, 0.2);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Loading content */
+.loading-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loading-message,
+.loading-text {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  max-width: 300px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 1.5rem auto;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.loading-progress {
+  margin-top: 1.5rem;
+}
+
+.progress-track {
+  width: 200px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto 0.5rem;
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Loading stats */
+.loading-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 1rem;
+}
+
+/* Button loader */
+.button-loader {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-loader-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: button-loader-bounce 1.4s ease-in-out infinite both;
+}
+
+.button-loader-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.button-loader-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes button-loader-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Skeleton loader */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skeleton--text {
+  border-radius: 4px;
+}
+
+.skeleton--rect {
+  border-radius: 8px;
+}
+
+.skeleton--circle {
+  border-radius: 50%;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: skeleton-shimmer 2s infinite;
+}
+
+@keyframes skeleton-shimmer {
+  to {
+    left: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loading-state {
+    padding: 2rem;
+  }
+  
+  .loading-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .dna-helix-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dna-node {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .loading-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

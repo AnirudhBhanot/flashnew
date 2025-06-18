@@ -1,0 +1,40 @@
+Failed to connect to Redis: Error 61 connecting to localhost:6379. Connection refused.. Caching disabled.
+2025-06-07 06:43:21,694 - api_analysis_enhanced - WARNING - Startup dataset not found, using synthetic benchmarks
+2025-06-07 06:43:22,935 - models.unified_orchestrator_v3_integrated - INFO - Loading models for unified orchestrator...
+2025-06-07 06:43:23,059 - models.unified_orchestrator_v3_integrated - INFO - Loaded dna_analyzer
+2025-06-07 06:43:23,079 - models.unified_orchestrator_v3_integrated - INFO - Loaded temporal_model
+2025-06-07 06:43:23,089 - models.unified_orchestrator_v3_integrated - INFO - Loaded industry_model
+2025-06-07 06:43:23,117 - models.unified_orchestrator_v3_integrated - INFO - Loaded ensemble_model
+2025-06-07 06:43:23,125 - __main__ - INFO - LLM endpoints enabled
+/Users/sf/Desktop/FLASH/api_server_unified.py:415: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+  @validator('funding_stage', 'product_stage', 'sector', 'investor_tier_primary')
+/Users/sf/Desktop/FLASH/api_server_unified.py:422: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+  @validator('*', pre=True)
+2025-06-07 06:43:23,166 - __main__ - INFO - Starting FLASH API Server...
+2025-06-07 06:43:23,166 - __main__ - INFO - Loaded 4 models
+2025-06-07 06:43:23,166 - __main__ - INFO - Pattern system: Not available
+2025-06-07 06:43:23,167 - __main__ - INFO - Started system metrics collection
+/Users/sf/Desktop/FLASH/api_server_unified.py:1530: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [24914]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+2025-06-07 06:43:33,328 - __main__ - INFO - [8f08e9cb] GET /docs
+2025-06-07 06:43:33,329 - __main__ - INFO - [8f08e9cb] Completed in 1.06ms - Status: 200
+INFO:     127.0.0.1:52310 - "GET /docs HTTP/1.1" 200 OK
+2025-06-07 06:43:49,335 - __main__ - INFO - [67bba836] GET /api/analysis/status
+2025-06-07 06:43:49,336 - llm_analysis - WARNING - Redis not available: Error 61 connecting to localhost:6379. Connection refused.. Caching disabled.
+2025-06-07 06:44:05,644 - __main__ - INFO - [67bba836] Completed in 16309.29ms - Status: 200
+INFO:     127.0.0.1:52395 - "GET /api/analysis/status HTTP/1.1" 200 OK
+2025-06-07 06:45:57,369 - __main__ - INFO - [2806e0b5] OPTIONS /config/all
+2025-06-07 06:45:57,370 - __main__ - INFO - [2806e0b5] Completed in 0.43ms - Status: 400
+INFO:     127.0.0.1:52941 - "OPTIONS /config/all HTTP/1.1" 400 Bad Request
+2025-06-07 06:46:02,373 - __main__ - INFO - [00318073] OPTIONS /predict
+2025-06-07 06:46:02,374 - __main__ - INFO - [00318073] Completed in 0.65ms - Status: 400
+INFO:     127.0.0.1:52965 - "OPTIONS /predict HTTP/1.1" 400 Bad Request

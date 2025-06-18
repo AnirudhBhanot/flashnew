@@ -1,0 +1,436 @@
+// Deep Dive - Minimalist Design System
+// Following Apple's design principles
+
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1d1d1f;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+  @media (max-width: 768px) {
+    padding: 16px 24px;
+  }
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #1d1d1f;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    background: #f5f5f7;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 48px 96px;
+
+  @media (max-width: 768px) {
+    padding: 100px 24px 48px;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: #1d1d1f;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #86868b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+// Progress Bar
+.progressContainer {
+  margin-bottom: 80px;
+}
+
+.progressBar {
+  position: relative;
+  height: 4px;
+  background: #f5f5f7;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #1d1d1f;
+  border-radius: 2px;
+  transition: width 0.8s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #86868b;
+}
+
+// Phase Cards
+.phasesGrid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.phaseCard {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px;
+  background: transparent;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    background: #f5f5f7;
+    transform: scale(1.01);
+  }
+
+  &.completed {
+    .phaseIcon {
+      background: #34c759;
+      color: white;
+    }
+    
+    .phaseStatus {
+      color: #34c759;
+    }
+  }
+
+  &.current {
+    border-color: #1d1d1f;
+    background: #f5f5f7;
+    
+    .phaseIcon {
+      background: #1d1d1f;
+      color: white;
+    }
+  }
+
+  &.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+      background: transparent;
+    }
+  }
+}
+
+.phaseIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.phaseContent {
+  flex: 1;
+}
+
+.phaseHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.phaseTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+}
+
+.phaseNumber {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.phaseDescription {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+.phaseStatus {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Synthesis Section
+.synthesisSection {
+  text-align: center;
+  padding-top: 80px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: #d2d2d7;
+  }
+}
+
+.synthesisCard {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 48px;
+  text-align: center;
+}
+
+.synthesisIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 32px;
+  border-radius: 20px;
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: #1d1d1f;
+  }
+}
+
+.synthesisTitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.synthesisDescription {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.synthesisButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1d1d1f;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    transform: scale(1.05);
+    background: #000000;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+// Individual Phase Pages Overrides
+.phaseContainer {
+  background: white;
+  color: #1d1d1f;
+  min-height: 100vh;
+}
+
+.componentCard {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateY(-2px);
+    box-shadow: none;
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+  }
+  
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86868b;
+    line-height: 1.5;
+  }
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: #f5f5f7 !important;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: none !important;
+  
+  svg, .componentIcon {
+    font-size: 24px;
+    color: #1d1d1f !important;
+  }
+}
+
+// Remove all gradients and heavy shadows
+.phaseHeader,
+.summaryCard {
+  background: white !important;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  
+  .phaseTitle {
+    color: #1d1d1f !important;
+    font-weight: 400;
+  }
+  
+  .phaseDescription {
+    color: #86868b !important;
+  }
+}
+
+// Progress indicators
+.ant-progress-text {
+  color: #1d1d1f !important;
+  font-weight: 400 !important;
+}
+
+.ant-progress-circle-path {
+  stroke: #1d1d1f !important;
+  stroke-width: 4px !important;
+}
+
+.ant-progress-circle-trail {
+  stroke: #f5f5f7 !important;
+}
+
+// Status badges
+.ant-tag {
+  background: #f5f5f7 !important;
+  color: #1d1d1f !important;
+  border: 1px solid #d2d2d7 !important;
+  font-weight: 400;
+  
+  &.ant-tag-success {
+    background: rgba(52, 199, 89, 0.1) !important;
+    color: #34c759 !important;
+    border-color: rgba(52, 199, 89, 0.2) !important;
+  }
+}
+
+// Override all Ant Design dark theme elements
+:global {
+  .ant-card,
+  .ant-tabs-nav,
+  .ant-alert {
+    background: white !important;
+    color: #1d1d1f !important;
+    border-color: #d2d2d7 !important;
+    box-shadow: none !important;
+  }
+  
+  .ant-btn-primary {
+    background: #1d1d1f !important;
+    border-color: #1d1d1f !important;
+    
+    &:hover {
+      background: #000000 !important;
+      border-color: #000000 !important;
+    }
+  }
+}

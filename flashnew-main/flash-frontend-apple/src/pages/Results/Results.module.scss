@@ -1,0 +1,438 @@
+.page {
+  min-height: 100vh;
+  background: #FFFFFF;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.nav {
+  padding: var(--apple-spacing-m) var(--apple-spacing-xl);
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--apple-spacing-xl) var(--apple-spacing-xxl);
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-xl);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.title {
+  font-size: 48px;
+  font-weight: var(--apple-font-weight-bold);
+  background: linear-gradient(135deg, #1D1D1F 0%, #86868B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--apple-spacing-m);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--apple-text-title3);
+  color: var(--apple-label-secondary);
+  font-weight: var(--apple-font-weight-regular);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// Main Score Card
+.scoreCard {
+  background: white;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: var(--apple-spacing-xxl);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007AFF 0%, #5856D6 50%, #34C759 100%);
+  }
+}
+
+.scoreGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.overallScore {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.scoreDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+}
+
+.verdictSection {
+  text-align: center;
+  padding: 32px;
+  background: #F5F5F7;
+  border-radius: 16px;
+
+  h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--apple-label-secondary);
+    margin-bottom: 16px;
+    font-weight: var(--apple-font-weight-medium);
+  }
+}
+
+.verdict {
+  font-size: 32px;
+  font-weight: var(--apple-font-weight-bold);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  letter-spacing: -0.01em;
+  
+  &.pass {
+    color: #34C759;
+    background: rgba(52, 199, 89, 0.1);
+  }
+  
+  &.conditional {
+    color: #FF9500;
+    background: rgba(255, 149, 0, 0.1);
+  }
+  
+  &.fail {
+    color: #FF3B30;
+    background: rgba(255, 59, 48, 0.1);
+  }
+}
+
+.quickStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border: 1px solid #E5E5EA;
+  border-radius: 12px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--apple-label-secondary);
+  margin-bottom: 8px;
+}
+
+.statValue {
+  display: block;
+  font-size: 18px;
+  font-weight: var(--apple-font-weight-semibold);
+  color: var(--apple-label-primary);
+}
+
+.scoreValue {
+  font-size: 72px;
+  font-weight: var(--apple-font-weight-bold);
+  line-height: 1;
+  
+  &.excellent {
+    color: var(--apple-green);
+  }
+  
+  &.good {
+    color: var(--apple-blue);
+  }
+  
+  &.fair {
+    color: var(--apple-orange);
+  }
+  
+  &.poor {
+    color: var(--apple-red);
+  }
+}
+
+.scoreLabel {
+  font-size: var(--apple-text-headline);
+  color: var(--apple-label-secondary);
+  margin-top: var(--apple-spacing-s);
+}
+
+.confidence {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #F5F5F7;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.confidenceLabel {
+  font-size: 14px;
+  color: var(--apple-label-secondary);
+}
+
+.confidenceValue {
+  font-size: 14px;
+  font-weight: var(--apple-font-weight-semibold);
+  color: var(--apple-label-primary);
+  text-transform: capitalize;
+}
+
+.confidenceDescription {
+  font-size: 14px;
+  color: var(--apple-label-secondary);
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.chartsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.radarChartSection,
+.barChartSection {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: var(--apple-font-weight-semibold);
+    color: var(--apple-label-primary);
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    &::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--apple-blue);
+      border-radius: 2px;
+    }
+  }
+}
+
+.insightsSection,
+.enhancedSection,
+.deepDiveSection,
+.comparativeSection,
+.recommendationsSection,
+.whatIfSection,
+.marketInsightsSection,
+.competitorSection {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--apple-blue) 0%, transparent 100%);
+  }
+}
+
+.scoreCard {
+  background-color: var(--apple-fill-quaternary);
+  border-radius: var(--apple-radius-medium);
+  padding: var(--apple-spacing-m);
+}
+
+.scoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--apple-spacing-s);
+  
+  h3 {
+    font-size: var(--apple-text-body);
+    font-weight: var(--apple-font-weight-semibold);
+    color: var(--apple-label-primary);
+    margin: 0;
+  }
+  
+  .scoreValue {
+    font-size: var(--apple-text-headline);
+  }
+}
+
+.scoreBar {
+  height: 8px;
+  background-color: var(--apple-fill-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.scoreBarFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease-out;
+}
+
+.section {
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-s);
+  font-size: var(--apple-text-title3);
+  font-weight: var(--apple-font-weight-semibold);
+  color: var(--apple-label-primary);
+  margin-bottom: var(--apple-spacing-m);
+  
+  svg {
+    color: var(--apple-blue);
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    position: relative;
+    padding-left: var(--apple-spacing-l);
+    margin-bottom: var(--apple-spacing-s);
+    font-size: var(--apple-text-body);
+    color: var(--apple-label-primary);
+    line-height: 1.5;
+    
+    &:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--apple-blue);
+      font-weight: bold;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.actionButton {
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 400;
+  background: none;
+  border: 1px solid #d1d1d1;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+  letter-spacing: -0.01em;
+
+  &:hover {
+    border-color: #000;
+  }
+
+  &.primary {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+
+    &:hover {
+      background: #333;
+      border-color: #333;
+    }
+  }
+}
+
+.campSection {
+  margin: 80px 0;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  margin: 0 0 48px 0;
+  letter-spacing: -0.02em;
+}
+
+// Color definitions if not in design system
+:root {
+  --apple-orange: #ff9500;
+}
+
+// Verdict colors
+.pass {
+  color: var(--apple-green);
+}
+
+.conditional {
+  color: var(--apple-orange);
+}
+
+.fail {
+  color: var(--apple-red);
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enhanced Strategic Framework Test</title>
+    <meta charset="UTF-8">
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+        h1 { color: #1a1a1a; margin-bottom: 10px; }
+        .subtitle { color: #666; margin-bottom: 30px; }
+        
+        /* SWOT Grid */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .swot-quadrant {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .swot-quadrant:nth-child(1) { border-left: 4px solid #34C759; }
+        .swot-quadrant:nth-child(2) { border-left: 4px solid #FF3B30; }
+        .swot-quadrant:nth-child(3) { border-left: 4px solid #007AFF; }
+        .swot-quadrant:nth-child(4) { border-left: 4px solid #FF9500; }
+        .swot-header {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .swot-quadrant:nth-child(1) .swot-header { color: #34C759; }
+        .swot-quadrant:nth-child(2) .swot-header { color: #FF3B30; }
+        .swot-quadrant:nth-child(3) .swot-header { color: #007AFF; }
+        .swot-quadrant:nth-child(4) .swot-header { color: #FF9500; }
+        .swot-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .swot-item {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* BCG Matrix */
+        .bcg-analysis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .bcg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .bcg-quadrant {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .bcg-quadrant.active {
+            background: #007AFF;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
+        }
+        .bcg-quadrant.active h5,
+        .bcg-quadrant.active p {
+            color: white;
+        }
+        .bcg-details {
+            padding: 20px;
+        }
+        .bcg-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .metric {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .metric label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .metric span {
+            font-size: 24px;
+            font-weight: 600;
+            color: #007AFF;
+        }
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #fff8dc;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+            margin-top: 20px;
+        }
+        
+        /* Porter's Five Forces */
+        .force-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-left: 4px solid #e0e0e0;
+        }
+        .force-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .force-level {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .force-level.low { background: #d1f2d1; color: #34C759; }
+        .force-level.medium { background: #ffe4cc; color: #FF9500; }
+        .force-level.high { background: #ffd4d1; color: #FF3B30; }
+        
+        button {
+            padding: 12px 24px;
+            background: #007AFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Strategic Framework Analysis</h1>
+        <p class="subtitle">Professional business intelligence demonstration</p>
+        
+        <button onclick="showProfessionalAnalysis()">Show Professional Analysis</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function showProfessionalAnalysis() {
+            const resultsDiv = document.getElementById('results');
+            
+            // Simulate company data
+            const company = {
+                name: "TechStart AI",
+                stage: "series-a",
+                runway: 14,
+                burn: 200000,
+                revenue: 150000,
+                marketGrowth: 28,
+                marketShare: 0.8,
+                competitorCount: 15,
+                teamSize: 25,
+                foundersExperience: 12,
+                nps: 68,
+                churn: 2.1,
+                customerConcentration: 35,
+                totalRaised: 8500000,
+                tam: 45000000000,
+                sam: 5000000000,
+                som: 40000000
+            };
+            
+            // Generate SWOT Analysis
+            const swotHtml = `
+                <h2>SWOT Analysis - ${company.name}</h2>
+                <div class="swot-grid">
+                    <div class="swot-quadrant">
+                        <h3 class="swot-header">Strengths</h3>
+                        <ul class="swot-list">
+                            <li class="swot-item">• Exceptional customer satisfaction with NPS of ${company.nps} (world-class is >50)</li>
+                            <li class="swot-item">• Best-in-class retention with ${company.churn}% monthly churn (SaaS benchmark: 3-5%)</li>
+                            <li class="swot-item">• Deep domain expertise: ${company.foundersExperience} years industry experience</li>
+                            <li class="swot-item">• Strong team of ${company.teamSize} FTEs for ${company.stage} stage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="swot-quadrant">
+                        <h3 class="swot-header">Weaknesses</h3>
+                        <ul class="swot-list">
+                            <li class="swot-item">• Burn rate ($${(company.burn/1000).toFixed(0)}k/mo) exceeds revenue by ${((company.burn - company.revenue)/company.burn * 100).toFixed(0)}%</li>
+                            <li class="swot-item">• Minimal market presence at ${company.marketShare}% share vs. ${company.competitorCount} competitors</li>
+                            <li class="swot-item">• Revenue concentration risk: ${company.customerConcentration}% from top customers</li>
+                            <li class="swot-item">• Only ${company.runway} months runway (below 18-month target)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="swot-quadrant">
+                        <h3 class="swot-header">Opportunities</h3>
+                        <ul class="swot-list">
+                            <li class="swot-item">• Explosive market growth at ${company.marketGrowth}% CAGR (vs. GDP growth of 2-3%)</li>
+                            <li class="swot-item">• Massive TAM of $${(company.tam/1000000000).toFixed(0)}B allows for multiple winners</li>
+                            <li class="swot-item">• Capturing just 1% of SAM would ${(company.sam * 0.01 / company.som).toFixed(0)}x current market share</li>
+                            <li class="swot-item">• High NPS indicates strong product-market fit for expansion</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="swot-quadrant">
+                        <h3 class="swot-header">Threats</h3>
+                        <ul class="swot-list">
+                            <li class="swot-item">• Highly fragmented market with ${company.competitorCount} direct competitors</li>
+                            <li class="swot-item">• Revenue concentration risk: ${company.customerConcentration}% from top customers</li>
+                            <li class="swot-item">• Burn rate sustainability concerns with current runway</li>
+                            <li class="swot-item">• Potential economic downturn impact on growth funding</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // Generate BCG Matrix
+            const relativeShare = company.marketShare / (100 / company.competitorCount);
+            const bcgQuadrant = company.marketGrowth > 20 && relativeShare > 1 ? 'Star' : 
+                               company.marketGrowth > 20 ? 'Question Mark' :
+                               relativeShare > 1 ? 'Cash Cow' : 'Dog';
+            
+            const bcgHtml = `
+                <h2>BCG Growth-Share Matrix</h2>
+                <div class="bcg-analysis">
+                    <div class="bcg-matrix">
+                        <div class="bcg-grid">
+                            <div class="bcg-quadrant ${bcgQuadrant === 'Star' ? 'active' : ''}">
+                                <h5>Star</h5>
+                                <p>High Growth, High Share</p>
+                            </div>
+                            <div class="bcg-quadrant ${bcgQuadrant === 'Question Mark' ? 'active' : ''}">
+                                <h5>Question Mark</h5>
+                                <p>High Growth, Low Share</p>
+                            </div>
+                            <div class="bcg-quadrant ${bcgQuadrant === 'Cash Cow' ? 'active' : ''}">
+                                <h5>Cash Cow</h5>
+                                <p>Low Growth, High Share</p>
+                            </div>
+                            <div class="bcg-quadrant ${bcgQuadrant === 'Dog' ? 'active' : ''}">
+                                <h5>Dog</h5>
+                                <p>Low Growth, Low Share</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bcg-details">
+                        <h4>Your Position: ${bcgQuadrant}</h4>
+                        <p>Weak position (${company.marketShare}% share) in attractive ${company.marketGrowth}% growth market. Critical inflection point requiring aggressive market share capture.</p>
+                        
+                        <div class="bcg-metrics">
+                            <div class="metric">
+                                <label>Market Share</label>
+                                <span>${company.marketShare}%</span>
+                            </div>
+                            <div class="metric">
+                                <label>Market Growth</label>
+                                <span>${company.marketGrowth}%</span>
+                            </div>
+                            <div class="metric">
+                                <label>Relative Share</label>
+                                <span>${relativeShare.toFixed(1)}x</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <span>⏱</span>
+                            <p>12-18 months to prove viability or consider pivot/exit</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Generate Porter's Five Forces
+            const portersHtml = `
+                <h2>Porter's Five Forces Analysis</h2>
+                <div class="porters-analysis">
+                    <div class="force-card">
+                        <div class="force-header">
+                            <h4>Threat of New Entrants</h4>
+                            <span class="force-level high">HIGH</span>
+                        </div>
+                        <div class="force-drivers">
+                            <h5>Key Drivers:</h5>
+                            <ul>
+                                <li>→ Low capital barriers - competitors can launch with <$1M</li>
+                                <li>→ No significant technical moats identified</li>
+                                <li>→ Minimal regulatory barriers in AI/SaaS space</li>
+                                <li>→ High market growth (${company.marketGrowth}%) attracting new players</li>
+                            </ul>
+                        </div>
+                        <div class="force-implication">
+                            <strong>Strategic Implication:</strong>
+                            <p>High threat requires rapid market share capture and building defensible moats within 12 months</p>
+                        </div>
+                    </div>
+                    
+                    <div class="force-card">
+                        <div class="force-header">
+                            <h4>Bargaining Power of Buyers</h4>
+                            <span class="force-level high">HIGH</span>
+                        </div>
+                        <div class="force-drivers">
+                            <h5>Key Drivers:</h5>
+                            <ul>
+                                <li>→ High concentration: ${company.customerConcentration}% revenue from top clients</li>
+                                <li>→ Low switching costs in current product configuration</li>
+                                <li>→ Multiple alternatives available (${company.competitorCount} competitors)</li>
+                                <li>→ Price sensitivity in current economic environment</li>
+                            </ul>
+                        </div>
+                        <div class="force-implication">
+                            <strong>Strategic Implication:</strong>
+                            <p>Reduce dependency through customer diversification (target: no customer >10% of revenue by Q4)</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            resultsDiv.innerHTML = swotHtml + bcgHtml + portersHtml;
+        }
+    </script>
+</body>
+</html>

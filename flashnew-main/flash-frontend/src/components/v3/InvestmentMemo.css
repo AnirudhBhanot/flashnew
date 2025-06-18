@@ -1,0 +1,849 @@
+/* Investment Memo Styles */
+.investment-memo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-10);
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-family-body);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Header Section */
+.memo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.company-info h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--spacing-3) 0;
+  color: #0a0a0a;
+}
+
+.company-details {
+  font-size: var(--font-size-base);
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.company-details .separator {
+  color: #ccc;
+}
+
+/* Verdict Badge */
+.verdict-badge {
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+.verdict-badge .verdict-text {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  display: block;
+  margin-bottom: var(--spacing-1);
+}
+
+.verdict-badge .confidence {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+}
+
+.verdict-badge.strong-buy {
+  background: #00c851;
+  color: white;
+}
+
+.verdict-badge.buy {
+  background: #E8EAED;
+  color: white;
+}
+
+.verdict-badge.hold {
+  background: #ff8800;
+  color: white;
+}
+
+.verdict-badge.watch {
+  background: #aa66cc;
+  color: white;
+}
+
+.verdict-badge.pass {
+  background: #ff4444;
+  color: white;
+}
+
+/* Sections */
+.investment-memo section {
+  margin-bottom: 40px;
+}
+
+.investment-memo h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-5) 0;
+  color: #0a0a0a;
+}
+
+.investment-memo h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-4) 0;
+  color: #333;
+}
+
+/* Investment Thesis */
+.thesis-box {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #E8EAED;
+}
+
+.thesis-box p {
+  font-size: var(--font-size-base);
+  margin: 0 0 var(--spacing-4) 0;
+  color: #333;
+}
+
+.comparables {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.comparables .label {
+  font-weight: var(--font-weight-semibold);
+  color: #666;
+  display: block;
+  margin-bottom: var(--spacing-3);
+}
+
+.comparable {
+  display: inline-block;
+  background: #e8f4f8;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  margin: var(--spacing-1) var(--spacing-1) var(--spacing-1) 0;
+  font-size: var(--font-size-sm);
+  color: #0066cc;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.metric-card {
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.metric-card.good {
+  border-color: #00c851;
+}
+
+.metric-card.warning {
+  border-color: #ff8800;
+}
+
+.metric-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #0a0a0a;
+  margin-bottom: var(--spacing-1);
+}
+
+.metric-label {
+  font-size: var(--font-size-sm);
+  color: #666;
+  margin-bottom: var(--spacing-1);
+}
+
+.metric-benchmark {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.metric-card.good .metric-benchmark {
+  color: #00c851;
+}
+
+.metric-card.warning .metric-benchmark {
+  color: #ff8800;
+}
+
+/* Strengths & Risks */
+.strengths-risks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.strengths h3,
+.risks h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.strengths h3::before {
+  content: '✅';
+  font-size: var(--font-size-xl);
+}
+
+.risks h3::before {
+  content: '⚠️';
+  font-size: var(--font-size-xl);
+}
+
+.strengths ol,
+.risks ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.strengths li,
+.risks li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.strengths {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #00c851;
+}
+
+.risks {
+  background: #fff9f0;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ff8800;
+}
+
+/* CAMP Scores Section */
+.camp-scores-section {
+  margin-bottom: 40px;
+}
+
+.camp-grid-scores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.camp-score-card {
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.camp-score-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.camp-score-card.excellent {
+  border-color: #00c851;
+  background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
+}
+
+.camp-score-card.good {
+  border-color: #E8EAED;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.camp-score-card.average {
+  border-color: #ff8800;
+  background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);
+}
+
+.camp-score-card.needs-work {
+  border-color: #ff4444;
+  background: linear-gradient(135deg, #fff0f0 0%, #ffffff 100%);
+}
+
+.camp-score-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-3);
+}
+
+.camp-score-card h3 {
+  font-size: var(--font-size-lg);
+  margin: 0 0 var(--spacing-3) 0;
+  color: #333;
+}
+
+.camp-score-value {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-1);
+}
+
+.camp-score-card.excellent .camp-score-value {
+  color: #00c851;
+}
+
+.camp-score-card.good .camp-score-value {
+  color: #E8EAED;
+}
+
+.camp-score-card.average .camp-score-value {
+  color: #ff8800;
+}
+
+.camp-score-card.needs-work .camp-score-value {
+  color: #ff4444;
+}
+
+.camp-score-desc {
+  font-size: var(--font-size-sm);
+  color: #666;
+  margin-bottom: var(--spacing-4);
+}
+
+.camp-metrics {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.camp-metrics .metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.camp-metrics .metric-item:last-child {
+  margin-bottom: 0;
+}
+
+.metric-name {
+  color: #666;
+}
+
+.metric-val {
+  font-weight: var(--font-weight-semibold);
+  color: #333;
+}
+
+/* Valuation Section */
+.valuation-display {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.valuation-range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.val-item {
+  text-align: center;
+}
+
+.val-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: #666;
+  margin-bottom: var(--spacing-1);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.val-amount {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.val-item.low .val-amount {
+  color: #666;
+}
+
+.val-item.fair .val-amount {
+  color: #E8EAED;
+  font-size: var(--font-size-4xl);
+}
+
+.val-item.high .val-amount {
+  color: #00c851;
+}
+
+.valuation-method {
+  font-size: var(--font-size-sm);
+  color: #666;
+  font-style: italic;
+}
+
+/* Next Steps */
+.steps-list {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  background: #E8EAED;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+  line-height: 1.6;
+  padding-top: 5px;
+  color: #333;
+}
+
+/* Model Breakdown Section */
+.model-breakdown-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid #e5e5e5;
+}
+
+.model-breakdown-section h2 {
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-base);
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Model Components */
+.model-components {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.component-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  transition: all 0.2s ease;
+}
+
+.component-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.component-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.component-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: 10px;
+}
+
+.component-name {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  margin-bottom: 5px;
+}
+
+.component-weight {
+  font-size: var(--font-size-xs);
+  color: #666;
+  background: #e5e5e5;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.component-score {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #E8EAED;
+  margin-bottom: 10px;
+}
+
+.component-desc {
+  font-size: var(--font-size-xs);
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Detected Patterns */
+.detected-patterns {
+  margin-bottom: 40px;
+}
+
+.detected-patterns h3 {
+  margin-bottom: 15px;
+}
+
+.pattern-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pattern-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8f4f8;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: var(--font-size-sm);
+  color: #0066cc;
+  border: 1px solid #b3e0f2;
+}
+
+.pattern-icon {
+  font-size: var(--font-size-lg);
+}
+
+/* Stage Weightings */
+.stage-weightings {
+  margin-bottom: 40px;
+}
+
+.stage-weightings h3 {
+  margin-bottom: 20px;
+}
+
+.weighting-info {
+  display: grid;
+  gap: 15px;
+}
+
+.weighting-item {
+  display: grid;
+  grid-template-columns: 200px 1fr 60px;
+  align-items: center;
+  gap: 15px;
+}
+
+.weighting-label {
+  font-weight: var(--font-weight-medium);
+  color: #333;
+}
+
+.weighting-bar {
+  height: 20px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.weighting-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #E8EAED 0%, #2196f3 100%);
+  transition: width 0.6s ease;
+}
+
+.weighting-value {
+  text-align: right;
+  font-weight: var(--font-weight-semibold);
+  color: #666;
+}
+
+/* Model Confidence */
+.model-confidence {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.model-confidence h3 {
+  margin-bottom: 15px;
+}
+
+.confidence-meter {
+  height: 30px;
+  background: #e5e5e5;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.confidence-level {
+  height: 100%;
+  background: linear-gradient(90deg, #E8EAED 0%, #00c851 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  transition: width 0.6s ease;
+}
+
+.confidence-label {
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+.confidence-desc {
+  font-size: var(--font-size-sm);
+  color: #666;
+  margin: 0;
+}
+
+/* Print Button */
+.print-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #E8EAED;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(232, 234, 237, 0.3);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.print-button:hover {
+  background: #2196f3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 234, 237, 0.4);
+}
+
+.print-button .icon {
+  font-size: var(--font-size-xl);
+}
+
+/* Print Styles */
+@media print {
+  .investment-memo {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .memo-header {
+    page-break-after: avoid;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .strengths-risks {
+    page-break-inside: avoid;
+  }
+
+  .metric-card,
+  .thesis-box,
+  .valuation-display,
+  .steps-list {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  /* Ensure colors print well */
+  .verdict-badge {
+    border: 2px solid currentColor;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Optimize for black and white printing */
+  @media (prefers-color-scheme: light) {
+    .metric-card.good {
+      border-width: 3px;
+    }
+    
+    .metric-card.warning {
+      border-style: dashed;
+    }
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .investment-memo {
+    padding: 20px;
+  }
+
+  .memo-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .verdict-badge {
+    width: 100%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strengths-risks {
+    grid-template-columns: 1fr;
+  }
+
+  .valuation-range {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .model-components {
+    grid-template-columns: 1fr;
+  }
+
+  .camp-grid-scores {
+    grid-template-columns: 1fr;
+  }
+
+  .weighting-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .weighting-label {
+    margin-bottom: 10px;
+  }
+
+  .weighting-value {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .print-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 1024px) {
+  .model-components {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .camp-grid-scores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .investment-memo {
+    background: #1a1a1a;
+    color: #e5e5e5;
+  }
+
+  .company-info h1,
+  .investment-memo h2 {
+    color: #f5f5f5;
+  }
+
+  .investment-memo h3 {
+    color: #e5e5e5;
+  }
+
+  .thesis-box,
+  .metrics-grid .metric-card,
+  .strengths,
+  .risks,
+  .valuation-display,
+  .steps-list {
+    background: #2a2a2a;
+  }
+
+  .company-details,
+  .metric-label,
+  .val-label,
+  .valuation-method {
+    color: #999;
+  }
+
+  .thesis-box p,
+  .strengths li,
+  .risks li,
+  .step-text {
+    color: #d5d5d5;
+  }
+
+  .comparable {
+    background: #1e3a5f;
+    color: #66b3ff;
+  }
+
+  .metric-card {
+    border-color: #444;
+  }
+
+  .memo-header {
+    border-bottom-color: #444;
+  }
+}

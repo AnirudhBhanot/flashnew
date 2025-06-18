@@ -1,0 +1,97 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Training artifacts
+catboost_info/
+checkpoints/
+*.pkl
+*.joblib
+*.h5
+*.ckpt
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.pid
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Large data files
+*.csv
+*.json
+!package.json
+!tsconfig.json
+!package-lock.json
+!orchestrator_config.json
+!orchestrator_config_realistic.json
+!feature_mapper_config.json
+!model_inventory.json
+!pattern_coverage_analysis.json
+!pattern_expansion_summary.json
+!prometheus.yml
+!dataset_validation_results.json
+!data/validation_report.json
+
+# Archives
+*.tar.gz
+*.zip
+*.rar
+
+# Redis
+dump.rdb
+
+# Monitoring
+metrics_export.json
+
+# Model files (keep checksums)
+!model_checksums.json.disabled
+!production_model_checksums.json.disabled
+

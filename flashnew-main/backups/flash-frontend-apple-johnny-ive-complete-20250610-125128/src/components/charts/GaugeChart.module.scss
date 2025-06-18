@@ -1,0 +1,55 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gauge {
+  display: block;
+}
+
+.centerDisplay {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.percentage {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display';
+  letter-spacing: -0.02em;
+  
+  &.success {
+    color: #32D74B;
+  }
+  
+  &.info {
+    color: #007AFF;
+  }
+  
+  &.warning {
+    color: #FF9F0A;
+  }
+  
+  &.fail {
+    color: #FF453A;
+  }
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #8E8E93;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text';
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

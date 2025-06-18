@@ -1,0 +1,79 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+  max-width: 600px;
+
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &.right {
+    text-align: right;
+    margin-left: auto;
+  }
+}
+
+.input {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #1d1d1f;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  &::placeholder {
+    color: #d2d2d7;
+    opacity: 0.3;
+  }
+
+  &:focus {
+    color: #000;
+
+    &::placeholder {
+      opacity: 0.1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+.prefix,
+.suffix {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: #86868b;
+  margin: 0 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin: 0 12px;
+  }
+}
+
+.underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #d2d2d7;
+  transform-origin: left center;
+}

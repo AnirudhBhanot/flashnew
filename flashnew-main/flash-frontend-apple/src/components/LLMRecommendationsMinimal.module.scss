@@ -1,0 +1,257 @@
+.container {
+  padding: 0;
+}
+
+.prompt {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.promptTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.promptDescription {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.generateButton {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 48px 0;
+
+  p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+}
+
+.error {
+  text-align: center;
+  padding: 48px 0;
+
+  p {
+    font-size: 14px;
+    color: #000;
+    margin: 0 0 16px 0;
+  }
+}
+
+.retryButton {
+  background: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #999;
+    color: #000;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.insights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.insight {
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #999;
+  }
+}
+
+.categoryFilter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  background: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #999;
+    color: #000;
+  }
+
+  &.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.recommendation {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #999;
+  }
+}
+
+.recHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.recCategory {
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.recPriority {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.recTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.recMetrics {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.metric {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #666;
+}
+
+.metricValue {
+  font-size: 12px;
+  color: #000;
+  font-weight: 500;
+}
+
+.actionItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.actionItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+
+  p {
+    font-size: 14px;
+    color: #000;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+}
+
+.actionNumber {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+  flex-shrink: 0;
+}

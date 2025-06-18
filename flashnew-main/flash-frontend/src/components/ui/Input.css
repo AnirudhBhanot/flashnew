@@ -1,0 +1,262 @@
+/* Input Component Styles
+   ===================== */
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-background-elevated);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  transition: all var(--transition-fast) var(--ease-out-expo);
+  -webkit-appearance: none;
+}
+
+.input:hover:not(:focus):not(:disabled) {
+  border-color: var(--color-border-hover);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  background: var(--color-background);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Floating Label */
+.input-floating-label .input {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.input-floating-label .input-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  transition: all var(--transition-fast) var(--ease-out-expo);
+  transform-origin: left center;
+}
+
+.input-floating-label .input:focus ~ .input-label,
+.input-floating-label .input-has-value ~ .input-label,
+.input-floating-label .input:not(:placeholder-shown) ~ .input-label {
+  top: 12px;
+  transform: translateY(0) scale(0.875);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* With Icon */
+.input-with-icon {
+  padding-left: 48px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.input:focus ~ .input-icon {
+  color: var(--color-primary);
+}
+
+/* Clear Button */
+.input-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-fast) var(--ease-out-expo);
+}
+
+.input-has-value .input-clear {
+  opacity: 1;
+}
+
+.input-clear:hover {
+  background: var(--color-background-hover);
+  color: var(--color-text);
+}
+
+.input-clear:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+/* Error State */
+.input-error {
+  border-color: var(--color-danger) !important;
+  animation: error-shake 0.5s ease-in-out;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 4px rgba(255, 68, 68, 0.1);
+}
+
+.input-wrapper-error .input-label {
+  color: var(--color-danger) !important;
+}
+
+.input-wrapper-error .input-icon {
+  color: var(--color-danger);
+}
+
+/* Success State */
+.input-success {
+  border-color: var(--color-success) !important;
+}
+
+.input-success:focus {
+  box-shadow: 0 0 0 4px rgba(0, 200, 81, 0.1);
+}
+
+.input-wrapper-success .input-label {
+  color: var(--color-success) !important;
+}
+
+.input-wrapper-success .input-icon {
+  color: var(--color-success);
+}
+
+/* Feedback */
+.input-feedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: var(--font-size-sm);
+  animation: slide-up-fade 0.3s var(--ease-out-expo);
+}
+
+.input-feedback-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.input-wrapper-error .input-feedback {
+  color: var(--color-danger);
+}
+
+.input-wrapper-success .input-feedback {
+  color: var(--color-success);
+}
+
+.input-wrapper-success .input-feedback-icon path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: success-check 0.4s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/* Input Variants */
+.input-search {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.input-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group .input-wrapper {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Loading State */
+.input-loading {
+  position: relative;
+}
+
+.input-loading::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: rotate-smooth 0.8s linear infinite;
+}
+
+/* Autofill Styles */
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-background-elevated) inset;
+  -webkit-text-fill-color: var(--color-text);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Placeholder Animation */
+@keyframes placeholder-pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.input:placeholder-shown:not(:focus)::placeholder {
+  animation: placeholder-pulse 2s ease-in-out infinite;
+}
+
+/* Focus Glow Effect */
+.input-glow:focus {
+  box-shadow: 
+    0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth Height Transition for Textarea */
+.input-textarea-auto {
+  overflow: hidden;
+  transition: height var(--transition-normal) var(--ease-out-expo);
+}

@@ -1,0 +1,307 @@
+// Ansoff Matrix - Minimalist Design
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// Matrix Grid
+.matrixContainer {
+  background: #f5f5f7;
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 48px;
+}
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: 100px 1fr 1fr;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.matrixCorner {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.matrixLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  
+  &.horizontal {
+    padding: 0 16px;
+  }
+  
+  &.vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 16px 0;
+  }
+}
+
+.matrixCell {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    transform: scale(1.02);
+    background: #f5f5f7;
+  }
+  
+  &.selected {
+    border-color: #1d1d1f;
+    background: #f5f5f7;
+  }
+}
+
+.cellHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cellTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.cellDescription {
+  font-size: 14px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.4;
+}
+
+.cellScore {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #f5f5f7;
+}
+
+.scoreValue {
+  font-size: 32px;
+  font-weight: 200;
+  color: #1d1d1f;
+}
+
+.scoreLabel {
+  font-size: 12px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Strategy Details
+.strategyDetails {
+  margin-bottom: 48px;
+}
+
+.strategyCard {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.strategyHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.strategyIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: #f5f5f7;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 32px;
+    height: 32px;
+    color: #1d1d1f;
+  }
+}
+
+.strategyTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.strategySubtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.strategyContent {
+  margin-top: 32px;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.metricCard {
+  text-align: center;
+  padding: 24px;
+  background: #f5f5f7;
+  border-radius: 12px;
+}
+
+.metricValue {
+  font-size: 28px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+}
+
+.metricLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+}
+
+.actionsList {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #f5f5f7;
+}
+
+.actionsTitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.actionNumber {
+  width: 24px;
+  height: 24px;
+  background: #1d1d1f;
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+.actionText {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 300;
+  color: #424245;
+  line-height: 1.5;
+}
+
+// Navigation
+.navigation {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  border: none;
+}
+
+.primaryButton {
+  background: #1d1d1f;
+  color: white;
+  
+  &:hover {
+    background: #000000;
+    transform: scale(1.05);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #1d1d1f;
+  border: 1px solid #d2d2d7;
+  
+  &:hover {
+    background: #f5f5f7;
+    border-color: #86868b;
+  }
+}
+
+// Remove all dark theme elements
+* {
+  background-image: none !important;
+  box-shadow: none !important;
+}

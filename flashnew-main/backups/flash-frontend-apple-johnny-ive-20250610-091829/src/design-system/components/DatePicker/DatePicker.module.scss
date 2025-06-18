@@ -1,0 +1,184 @@
+.container {
+  position: relative;
+  width: 100%;
+  
+  &.small {
+    --input-height: 38px;
+    --input-padding: 7px 12px;
+    --font-size: var(--apple-text-footnote);
+  }
+  
+  &.medium {
+    --input-height: 44px;
+    --input-padding: 11px 16px;
+    --font-size: var(--apple-text-body);
+  }
+  
+  &.large {
+    --input-height: 52px;
+    --input-padding: 15px 20px;
+    --font-size: var(--apple-text-body);
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--apple-spacing-s);
+  font-size: var(--font-size);
+  font-weight: var(--apple-font-weight-medium);
+  color: var(--apple-label-primary);
+}
+
+.required {
+  color: var(--apple-red);
+  margin-left: 2px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  height: var(--input-height);
+  
+  background-color: var(--apple-fill-quaternary);
+  border: 1px solid transparent;
+  border-radius: var(--apple-radius-medium);
+  overflow: hidden;
+  cursor: pointer;
+  
+  transition: all var(--apple-duration-fast) var(--apple-ease-out);
+  
+  &:hover:not(.disabled .inputWrapper) {
+    background-color: var(--apple-fill-tertiary);
+  }
+  
+  .focused & {
+    background-color: var(--apple-bg-primary);
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+  }
+  
+  .hasError & {
+    border-color: var(--apple-red);
+    
+    .focused & {
+      box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.2);
+    }
+  }
+  
+  .disabled & {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.dateDisplay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  
+  display: flex;
+  align-items: center;
+  padding: var(--input-padding);
+  padding-right: 60px;
+  
+  font-family: var(--apple-font-text);
+  font-size: var(--font-size);
+  font-weight: var(--apple-font-weight-regular);
+  color: var(--apple-label-primary);
+  
+  pointer-events: none;
+  
+  .container:not(.hasValue) & {
+    color: var(--apple-label-tertiary);
+  }
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+  
+  // Style the native date picker
+  &::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+
+.icons {
+  position: absolute;
+  right: var(--apple-spacing-s);
+  top: 50%;
+  transform: translateY(-50%);
+  
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-s);
+  pointer-events: none;
+}
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  
+  background-color: var(--apple-fill-secondary);
+  border: none;
+  border-radius: 50%;
+  color: var(--apple-label-secondary);
+  cursor: pointer;
+  pointer-events: all;
+  
+  transition: all var(--apple-duration-instant) var(--apple-ease-out);
+  
+  &:hover {
+    background-color: var(--apple-fill-primary);
+    color: var(--apple-label-primary);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.calendarIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apple-label-secondary);
+}
+
+.error,
+.helper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: var(--apple-text-caption1);
+  line-height: 1.3;
+}
+
+.error {
+  color: var(--apple-red);
+}
+
+.helper {
+  color: var(--apple-label-secondary);
+}

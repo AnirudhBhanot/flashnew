@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Michelin Analysis in Frontend</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f7;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1d1d1f;
+            margin-bottom: 30px;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .loading {
+            background: #cce5ff;
+            color: #004085;
+        }
+        .section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f5f5f7;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .recommendations {
+            list-style: none;
+            padding: 0;
+        }
+        .recommendations li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #007aff;
+        }
+        button {
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #0051d5;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        pre {
+            background: #f5f5f7;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Michelin Strategic Analysis Test</h1>
+        
+        <div id="status" class="status loading">
+            Ready to test Michelin analysis
+        </div>
+
+        <div>
+            <button onclick="testOriginalEndpoint()">Test Original Endpoint</button>
+            <button onclick="testFixedEndpoint()">Test Fixed Endpoint</button>
+            <button onclick="testWithFallback()">Test with Fallback</button>
+        </div>
+
+        <div id="results" style="display: none;">
+            <div class="section">
+                <h2>Executive Briefing</h2>
+                <p id="briefing"></p>
+            </div>
+
+            <div class="section">
+                <h2>Key Recommendations</h2>
+                <ul id="recommendations" class="recommendations"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Critical Success Factors</h2>
+                <ul id="success-factors" class="recommendations"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Full Response</h2>
+                <pre id="full-response"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sampleData = {
+            startup_data: {
+                startup_name: "TechVenture AI",
+                sector: "artificial-intelligence",
+                funding_stage: "seed",
+                total_capital_raised_usd: 2000000,
+                cash_on_hand_usd: 1500000,
+                market_size_usd: 50000000000,
+                market_growth_rate_annual: 45,
+                competitor_count: 8,
+                market_share_percentage: 0.01,
+                team_size_full_time: 12,
+                customer_count: 25,
+                customer_acquisition_cost_usd: 1000,
+                lifetime_value_usd: 10000,
+                monthly_active_users: 5000,
+                proprietary_tech: true,
+                patents_filed: 2,
+                founders_industry_experience_years: 8,
+                b2b_or_b2c: "b2b",
+                burn_rate_usd: 75000,
+                monthly_burn_usd: 75000,
+                runway_months: 20,
+                product_stage: "beta",
+                investor_tier_primary: "tier_2",
+                revenue_growth_rate: 150,
+                gross_margin: 70,
+                annual_revenue_usd: 500000
+            },
+            analysis_depth: "comprehensive"
+        };
+
+        function updateStatus(message, type = 'loading') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+        }
+
+        function displayResults(data) {
+            document.getElementById('results').style.display = 'block';
+            
+            // Display executive briefing
+            document.getElementById('briefing').textContent = 
+                data.executive_briefing || 'No briefing available';
+            
+            // Display recommendations
+            const recList = document.getElementById('recommendations');
+            recList.innerHTML = '';
+            (data.key_recommendations || []).forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recList.appendChild(li);
+            });
+            
+            // Display success factors
+            const factorsList = document.getElementById('success-factors');
+            factorsList.innerHTML = '';
+            (data.critical_success_factors || []).forEach(factor => {
+                const li = document.createElement('li');
+                li.textContent = factor;
+                factorsList.appendChild(li);
+            });
+            
+            // Display full response
+            document.getElementById('full-response').textContent = 
+                JSON.stringify(data, null, 2);
+        }
+
+        async function testEndpoint(url, description) {
+            updateStatus(`Testing ${description}...`, 'loading');
+            
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+                
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(sampleData),
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    updateStatus(`✅ ${description} succeeded!`, 'success');
+                    displayResults(data);
+                } else {
+                    const error = await response.text();
+                    updateStatus(`❌ ${description} failed: ${response.status} - ${error}`, 'error');
+                }
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    updateStatus(`⏱️ ${description} timed out after 30 seconds`, 'error');
+                } else {
+                    updateStatus(`❌ ${description} error: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        function testOriginalEndpoint() {
+            testEndpoint('http://localhost:8001/api/michelin/analyze', 'Original Michelin endpoint');
+        }
+
+        function testFixedEndpoint() {
+            testEndpoint('http://localhost:8001/api/michelin-fixed/analyze', 'Fixed Michelin endpoint');
+        }
+
+        async function testWithFallback() {
+            updateStatus('Testing with immediate fallback...', 'loading');
+            
+            // Simulate the fallback response that would be generated
+            const fallbackResponse = {
+                startup_name: sampleData.startup_data.startup_name,
+                analysis_date: new Date().toISOString(),
+                executive_briefing: `${sampleData.startup_data.startup_name} is a ${sampleData.startup_data.funding_stage} stage ${sampleData.startup_data.sector} company with significant growth potential. The company has demonstrated initial traction and is well-positioned to capture market share in a rapidly growing sector.`,
+                key_recommendations: [
+                    "Focus on achieving product-market fit in the enterprise segment",
+                    "Raise Series A funding within the next 12 months",
+                    "Build repeatable sales process and scale go-to-market",
+                    "Establish strategic partnerships for distribution",
+                    "Invest in platform capabilities for future growth"
+                ],
+                critical_success_factors: [
+                    "Achieving positive unit economics within 6 months",
+                    "Maintaining monthly burn rate below $100K",
+                    "Reaching 100 enterprise customers",
+                    "Building a world-class engineering team"
+                ],
+                phase1: { /* ... full phase 1 data ... */ },
+                phase2: { /* ... full phase 2 data ... */ },
+                phase3: { /* ... full phase 3 data ... */ },
+                next_steps: [
+                    {
+                        timeline: "30 days",
+                        actions: ["Hire VP of Sales", "Define ICP", "Launch customer advisory board"]
+                    },
+                    {
+                        timeline: "60 days",
+                        actions: ["Close 5 pilot customers", "Complete pitch deck", "Begin fundraising"]
+                    }
+                ]
+            };
+            
+            // Simulate a delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            updateStatus('✅ Fallback analysis completed!', 'success');
+            displayResults(fallbackResponse);
+        }
+    </script>
+</body>
+</html>

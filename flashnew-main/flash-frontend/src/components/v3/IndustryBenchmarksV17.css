@@ -1,0 +1,193 @@
+.industry-benchmarks-v17 {
+  width: 100%;
+  padding: var(--spacing-xl) 0;
+}
+
+.benchmarks-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.benchmarks-header h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.benchmarks-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.benchmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.benchmark-card {
+  padding: var(--spacing-lg);
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.benchmark-card:hover {
+  border-color: var(--color-primary-alpha-20);
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+}
+
+.benchmark-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-md);
+}
+
+.benchmark-header h3 {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.benchmark-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.benchmark-percentile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.percentile-label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+}
+
+.percentile-number {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.percentile-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.performance-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-background-tertiary);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+}
+
+.performance-icon {
+  font-size: var(--font-size-base);
+}
+
+.performance-label {
+  font-weight: 500;
+}
+
+.benchmark-chart {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.benchmark-chart .progress {
+  height: 8px;
+  background: var(--color-background-tertiary);
+  border-radius: var(--radius-full);
+  overflow: visible;
+  margin-bottom: 8px;
+}
+
+.benchmark-chart .progress-bar {
+  position: relative;
+}
+
+.benchmark-chart .progress-bar::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border: 3px solid var(--color-background-primary);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 212, 255, 0.4);
+}
+
+.benchmark-markers {
+  position: relative;
+  height: 60px;
+  margin-top: var(--spacing-sm);
+}
+
+.marker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+.marker-line {
+  width: 1px;
+  height: 16px;
+  background: var(--color-border);
+  margin-bottom: var(--spacing-xs);
+}
+
+.marker-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  margin-bottom: 2px;
+}
+
+.marker-value {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.benchmark-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .benchmark-card {
+  background: rgba(20, 25, 40, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .benchmark-card:hover {
+  background: rgba(20, 25, 40, 0.8);
+}
+
+[data-theme="dark"] .performance-badge {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benchmarks-grid {
+    grid-template-columns: 1fr;
+  }
+}

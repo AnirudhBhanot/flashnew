@@ -1,0 +1,307 @@
+/* Framework Visualization Styles */
+
+.fv-no-visualization {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text-secondary, #86868B);
+  font-size: 14px;
+}
+
+/* BCG Matrix Styles */
+.fv-matrix-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 32px;
+}
+
+.fv-matrix {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Square aspect ratio */
+  background: white;
+  border: 2px solid var(--color-border, #D2D2D7);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fv-quadrant {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--color-border-light, #F0F0F5);
+}
+
+.fv-quadrant-tl {
+  top: 0;
+  left: 0;
+  background: rgba(52, 199, 89, 0.05);
+}
+
+.fv-quadrant-tr {
+  top: 0;
+  right: 0;
+  background: rgba(255, 149, 0, 0.05);
+}
+
+.fv-quadrant-bl {
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 122, 255, 0.05);
+}
+
+.fv-quadrant-br {
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 59, 48, 0.05);
+}
+
+.fv-quadrant-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary, #1D1D1F);
+  margin-bottom: 4px;
+}
+
+.fv-quadrant-desc {
+  font-size: 12px;
+  color: var(--color-text-secondary, #86868B);
+}
+
+.fv-position-marker {
+  position: absolute;
+  transform: translate(-50%, 50%);
+  z-index: 10;
+}
+
+.fv-position-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary, #007AFF);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 8px;
+}
+
+.fv-position-label {
+  background: var(--color-primary, #007AFF);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.fv-axis {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary, #86868B);
+}
+
+.fv-axis-x {
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fv-axis-y {
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+}
+
+/* SWOT Quadrant Styles */
+.fv-swot-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.fv-swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  min-height: 400px;
+}
+
+.fv-swot-section {
+  background: white;
+  border: 1px solid var(--color-border, #D2D2D7);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fv-swot-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--color-text-primary, #1D1D1F);
+}
+
+.fv-swot-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fv-swot-section li {
+  padding: 8px 0 8px 20px;
+  position: relative;
+  font-size: 14px;
+  color: var(--color-text-primary, #1D1D1F);
+  line-height: 1.5;
+}
+
+.fv-swot-section li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  font-weight: 600;
+}
+
+.fv-strengths {
+  background: rgba(52, 199, 89, 0.03);
+  border-color: rgba(52, 199, 89, 0.3);
+}
+
+.fv-strengths h4 {
+  color: #28A745;
+}
+
+.fv-strengths li::before {
+  color: #28A745;
+}
+
+.fv-weaknesses {
+  background: rgba(255, 59, 48, 0.03);
+  border-color: rgba(255, 59, 48, 0.3);
+}
+
+.fv-weaknesses h4 {
+  color: #DC3545;
+}
+
+.fv-weaknesses li::before {
+  color: #DC3545;
+}
+
+.fv-opportunities {
+  background: rgba(0, 122, 255, 0.03);
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+.fv-opportunities h4 {
+  color: #007AFF;
+}
+
+.fv-opportunities li::before {
+  color: #007AFF;
+}
+
+.fv-threats {
+  background: rgba(255, 149, 0, 0.03);
+  border-color: rgba(255, 149, 0, 0.3);
+}
+
+.fv-threats h4 {
+  color: #FF9500;
+}
+
+.fv-threats li::before {
+  color: #FF9500;
+}
+
+.fv-empty {
+  color: var(--color-text-tertiary, #C7C7CC);
+  font-style: italic;
+}
+
+/* Spider Chart Styles */
+.fv-spider-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.fv-spider-container svg {
+  width: 100%;
+  height: auto;
+}
+
+.fv-spider-label {
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--color-text-primary, #1D1D1F);
+}
+
+.fv-spider-value {
+  font-size: 11px;
+  fill: var(--color-text-secondary, #86868B);
+}
+
+.fv-spider-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.fv-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-secondary, #86868B);
+}
+
+.fv-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fv-swot-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+  
+  .fv-spider-legend {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .fv-matrix,
+  .fv-swot-section {
+    background: var(--color-surface-dark, #1C1C1E);
+    border-color: var(--color-border-dark, #38383A);
+  }
+  
+  .fv-quadrant {
+    border-color: var(--color-border-dark, #38383A);
+  }
+  
+  .fv-spider-container svg line,
+  .fv-spider-container svg circle:not([fill]) {
+    stroke: var(--color-border-dark, #38383A);
+  }
+}

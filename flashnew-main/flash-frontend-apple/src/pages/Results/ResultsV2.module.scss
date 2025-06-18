@@ -1,0 +1,287 @@
+// Johnny Ive-inspired minimalist design
+.container {
+  min-height: 100vh;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+// Minimal navigation
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
+}
+
+.backButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #86868B;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  
+  &:hover {
+    color: #1D1D1F;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  svg {
+    display: block;
+  }
+}
+
+// Main content
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 48px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    padding: 100px 24px 60px;
+  }
+}
+
+// Hero section with the big number
+.hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.probability {
+  display: inline-flex;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.number {
+  font-size: 144px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #1D1D1F;
+  
+  @media (max-width: 768px) {
+    font-size: 96px;
+  }
+}
+
+.percent {
+  font-size: 72px;
+  font-weight: 400;
+  color: #86868B;
+  margin-left: 8px;
+  
+  @media (max-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+.label {
+  font-size: 21px;
+  color: #86868B;
+  font-weight: 400;
+  margin-bottom: 48px;
+  
+  @media (max-width: 768px) {
+    font-size: 19px;
+  }
+}
+
+.verdict {
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1D1D1F;
+    letter-spacing: -0.01em;
+    
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+  
+  p {
+    font-size: 17px;
+    color: #86868B;
+    line-height: 1.5;
+  }
+}
+
+// Progressive disclosure section
+.details {
+  width: 100%;
+  max-width: 600px;
+}
+
+.showMore {
+  background: none;
+  border: 2px solid #1D1D1F;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #1D1D1F;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  
+  &:hover {
+    background: #1D1D1F;
+    color: white;
+  }
+}
+
+.detailsContent {
+  overflow: hidden;
+}
+
+// CAMP Scores
+.scores {
+  margin-top: 48px;
+  
+  h3 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1D1D1F;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+}
+
+.scoreGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.scoreItem {
+  text-align: center;
+  
+  .scoreLabel {
+    display: block;
+    font-size: 15px;
+    color: #86868B;
+    margin-bottom: 8px;
+  }
+  
+  .scoreValue {
+    display: block;
+    font-size: 48px;
+    font-weight: 600;
+    color: #1D1D1F;
+    line-height: 1;
+    
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+  }
+}
+
+// Primary Insight
+.insight {
+  margin-top: 64px;
+  padding: 32px;
+  background: #F5F5F7;
+  border-radius: 16px;
+  
+  h3 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1D1D1F;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-size: 17px;
+    color: #1D1D1F;
+    line-height: 1.6;
+  }
+}
+
+// Actions
+.actions {
+  margin-top: 48px;
+  text-align: center;
+}
+
+// Full Report
+.fullReport {
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid #E5E5EA;
+}
+
+.reportSection {
+  margin-bottom: 48px;
+  
+  h4 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1D1D1F;
+    margin-bottom: 16px;
+  }
+}
+
+.reportText {
+  font-size: 17px;
+  color: #1D1D1F;
+  line-height: 1.6;
+}
+
+.recommendations {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    font-size: 17px;
+    color: #1D1D1F;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding-left: 28px;
+    position: relative;
+    
+    &::before {
+      content: counter(list-item);
+      counter-increment: list-item;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 600;
+      color: #007AFF;
+    }
+  }
+}
+
+.reportActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 48px;
+  
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}

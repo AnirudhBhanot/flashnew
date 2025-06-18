@@ -1,0 +1,32 @@
+============================================================
+REALISTIC MODEL TRAINING REPORT
+============================================================
+Date: 2025-06-06 13:08:43.182464
+Dataset: realistic_startup_dataset_100k.csv
+
+Model Performance:
+Average AUC: 0.499
+Average TPR: 0.185
+Average TNR: 0.818
+
+Individual Models:
+
+dna_analyzer:
+  AUC: 0.494
+  TPR: 0.032
+  TNR: 0.970
+
+temporal_model:
+  AUC: 0.504
+  TPR: 0.339
+  TNR: 0.666
+
+industry_model:
+  AUC: 0.504
+  TPR: 0.339
+  TNR: 0.666
+
+ensemble_model:
+  AUC: 0.494
+  TPR: 0.032
+  TNR: 0.970

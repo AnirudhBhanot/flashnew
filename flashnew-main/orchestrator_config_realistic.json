@@ -1,0 +1,22 @@
+{
+  "models": {
+    "paths": {
+      "dna_analyzer": "models/production_v46_realistic/dna_analyzer.pkl",
+      "temporal_model": "models/production_v46_realistic/temporal_model.pkl",
+      "industry_model": "models/production_v46_realistic/industry_model.pkl",
+      "ensemble_model": "models/production_v46_realistic/ensemble_model.pkl"
+    },
+    "weights": {
+      "camp_evaluation": 0.4,
+      "pattern_analysis": 0.0,
+      "industry_specific": 0.3,
+      "temporal_prediction": 0.2,
+      "ensemble": 0.1
+    }
+  },
+  "realistic_mode": true,
+  "calibration": {
+    "enabled": false,
+    "disclaimer": "These predictions are based on realistic data. Early-stage success is inherently uncertain."
+  }
+}

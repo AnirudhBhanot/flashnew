@@ -1,0 +1,134 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--apple-bg-primary);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--apple-spacing-m) var(--apple-spacing-xl);
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--apple-spacing-xl);
+}
+
+.title {
+  font-size: var(--apple-text-title1);
+  font-weight: var(--apple-font-weight-semibold);
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.subtitle {
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-secondary);
+  margin-bottom: var(--apple-spacing-xl);
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apple-spacing-m);
+  padding: var(--apple-spacing-m);
+  background-color: var(--apple-fill-quaternary);
+  border-radius: var(--apple-radius-medium);
+  margin-bottom: var(--apple-spacing-xxl);
+  
+  svg {
+    flex-shrink: 0;
+    color: var(--apple-blue);
+  }
+  
+  p {
+    font-size: var(--apple-text-footnote);
+    color: var(--apple-label-secondary);
+    line-height: 1.4;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-xl);
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.runwaySection {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--apple-spacing-m);
+  
+  > :first-child {
+    flex: 1;
+  }
+  
+  button {
+    margin-bottom: 4px;
+  }
+}
+
+.advancedSection {
+  margin: calc(-1 * var(--apple-spacing-m)) 0;
+}
+
+.advancedFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-xl);
+  padding: var(--apple-spacing-xl) 0;
+}
+
+.burnMultipleSection {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--apple-spacing-m);
+  
+  > :first-child {
+    flex: 1;
+  }
+  
+  button {
+    margin-bottom: 4px;
+  }
+}
+
+.runwayIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-m);
+  padding: var(--apple-spacing-m);
+  background-color: var(--apple-fill-quaternary);
+  border-radius: var(--apple-radius-medium);
+  
+  svg {
+    color: var(--apple-green);
+  }
+  
+  p {
+    font-size: var(--apple-text-callout);
+    color: var(--apple-label-primary);
+    
+    strong {
+      font-weight: var(--apple-font-weight-semibold);
+      color: var(--apple-green);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: var(--apple-spacing-m);
+  
+  > * {
+    flex: 1;
+  }
+}

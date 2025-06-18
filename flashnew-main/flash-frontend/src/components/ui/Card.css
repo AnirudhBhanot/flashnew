@@ -1,0 +1,327 @@
+/* Card Component Styles
+   ==================== */
+
+.card {
+  position: relative;
+  background: var(--color-background-elevated);
+  border-radius: 16px;
+  overflow: hidden;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Card Variants */
+.card-default {
+  background: var(--color-background-elevated);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-elevated {
+  background: var(--color-background-card);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card-bordered {
+  background: var(--color-background-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-background-elevated) 0%,
+    var(--color-background-card) 100%
+  );
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Interactive State */
+.card-interactive {
+  cursor: pointer;
+  transition: all var(--transition-normal) var(--ease-out-expo);
+}
+
+.card-interactive:hover {
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.card-interactive:active {
+  transition-duration: 50ms;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.card-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.card-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  animation: bounce-subtle 2s infinite;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.card-header p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.card-header-action {
+  flex-shrink: 0;
+}
+
+/* Card Body */
+.card-body {
+  position: relative;
+}
+
+.card-body-padded {
+  padding: 24px;
+}
+
+/* Card Footer */
+.card-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border-subtle);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.card-footer-transparent {
+  background: transparent;
+}
+
+/* Card Group */
+.card-group {
+  display: grid;
+  gap: 16px;
+}
+
+/* Hover Effects */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.card-interactive:hover::before {
+  opacity: 1;
+}
+
+/* Glow Effect */
+.card-glow {
+  position: relative;
+  z-index: 0;
+}
+
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--transition-normal);
+  filter: blur(20px);
+}
+
+.card-glow:hover::after {
+  opacity: 0.5;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Loading State */
+.card-loading {
+  overflow: hidden;
+}
+
+.card-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-header {
+    padding: 16px 20px;
+  }
+  
+  .card-body-padded {
+    padding: 20px;
+  }
+  
+  .card-footer {
+    padding: 12px 20px;
+  }
+}
+
+/* Animation for subtle bounce */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Shimmer animation for loading */
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Special Effects */
+.card-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.1) 90deg,
+    transparent 180deg
+  );
+  animation: rotate-smooth 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Metric Cards */
+.card-metric {
+  text-align: center;
+  padding: 24px;
+}
+
+.card-metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.card-metric-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-metric-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 4px 12px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.card-metric-change-positive {
+  color: var(--color-success);
+  background: rgba(0, 200, 81, 0.1);
+}
+
+.card-metric-change-negative {
+  color: var(--color-danger);
+  background: rgba(255, 68, 68, 0.1);
+}
+
+/* Feature Card */
+.card-feature {
+  text-align: center;
+  padding: 32px 24px;
+  transition: all var(--transition-normal) var(--ease-out-expo);
+}
+
+.card-feature-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 16px;
+  transform: rotate(3deg);
+  transition: transform var(--transition-normal) var(--ease-spring);
+}
+
+.card-feature:hover .card-feature-icon {
+  transform: rotate(-3deg) scale(1.1);
+}
+
+.card-feature-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.card-feature-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}

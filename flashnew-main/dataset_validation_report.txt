@@ -1,0 +1,21 @@
+
+================================================================================
+DATASET VALIDATION REPORT
+================================================================================
+
+Dataset Size: 100,000 companies
+Overall Success Rate: 16.0%
+
+Validation Result: PASS
+Total Issues Found: 0
+Total Warnings: 3
+
+WARNINGS:
+  1. pre_seed success rate 15.9% outside expected range 5-15%
+  2. series_a success rate 16.1% outside expected range 30-50%
+  3. series_b success rate 16.1% outside expected range 45-65%
+
+✅ Dataset passes all critical validation checks!
+This dataset appears realistic and suitable for ML training.
+
+================================================================================

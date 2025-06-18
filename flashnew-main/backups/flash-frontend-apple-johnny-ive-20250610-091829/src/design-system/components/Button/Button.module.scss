@@ -1,0 +1,145 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apple-spacing-s);
+  
+  font-family: var(--apple-font-text);
+  font-weight: var(--apple-font-weight-medium);
+  text-align: center;
+  text-decoration: none;
+  
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  
+  transition: all var(--apple-duration-fast) var(--apple-ease-out);
+  
+  &:focus-visible {
+    outline: 2px solid var(--apple-blue);
+    outline-offset: 2px;
+  }
+  
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+  
+  &.fullWidth {
+    width: 100%;
+  }
+  
+  &.loading {
+    color: transparent;
+  }
+}
+
+// Variants
+.primary {
+  background-color: var(--apple-blue);
+  color: white;
+  
+  &:hover:not(.disabled) {
+    background-color: #0051D5;
+  }
+  
+  &:active:not(.disabled) {
+    background-color: #0041A8;
+  }
+}
+
+.secondary {
+  background-color: var(--apple-fill-tertiary);
+  color: var(--apple-label-primary);
+  
+  &:hover:not(.disabled) {
+    background-color: var(--apple-fill-secondary);
+  }
+  
+  &:active:not(.disabled) {
+    background-color: var(--apple-fill-primary);
+  }
+}
+
+.text {
+  background-color: transparent;
+  color: var(--apple-blue);
+  
+  &:hover:not(.disabled) {
+    opacity: 0.8;
+  }
+  
+  &:active:not(.disabled) {
+    opacity: 0.6;
+  }
+}
+
+.destructive {
+  background-color: var(--apple-red);
+  color: white;
+  
+  &:hover:not(.disabled) {
+    background-color: #DC2626;
+  }
+  
+  &:active:not(.disabled) {
+    background-color: #B91C1C;
+  }
+}
+
+// Sizes
+.small {
+  min-height: 34px;
+  padding: 6px 14px;
+  font-size: var(--apple-text-footnote);
+  border-radius: var(--apple-radius-small);
+}
+
+.medium {
+  min-height: 44px;
+  padding: 11px 20px;
+  font-size: var(--apple-text-body);
+  border-radius: var(--apple-radius-medium);
+}
+
+.large {
+  min-height: 50px;
+  padding: 14px 24px;
+  font-size: var(--apple-text-body);
+  border-radius: 12px;
+}
+
+// Icon
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Loading spinner
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  
+  svg {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

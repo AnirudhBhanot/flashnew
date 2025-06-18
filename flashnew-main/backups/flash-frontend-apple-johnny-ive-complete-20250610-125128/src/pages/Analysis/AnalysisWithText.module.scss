@@ -1,0 +1,55 @@
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+}
+
+.dots {
+  display: flex;
+  gap: 1px;
+  
+  span {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.3);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-color: #000;
+  }
+  
+  .text {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .dots span {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}

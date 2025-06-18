@@ -1,0 +1,27 @@
+{
+  "total_startups": 100000,
+  "success_rate": 0.40302,
+  "pattern_coverage": {
+    "with_clear_pattern": 0.37346999999999997,
+    "without_pattern": 0.62653
+  },
+  "pattern_sizes": {
+    "High-Margin SaaS": 8305,
+    "Marketplace": 893,
+    "Hypergrowth": 2441,
+    "Steady Efficient": 23995,
+    "AI/Data-Driven": 1126,
+    "Capital Efficient": 28345,
+    "Enterprise B2B": 1107
+  },
+  "pattern_success_rates": {
+    "High-Margin SaaS": 0.652739313666466,
+    "Marketplace": 0.47368421052631576,
+    "Hypergrowth": 0.6157312576812781,
+    "Steady Efficient": 0.6373411127318191,
+    "AI/Data-Driven": 0.7495559502664298,
+    "Capital Efficient": 0.6881284177103546,
+    "Enterprise B2B": 0.33875338753387535
+  },
+  "recommendation": "Expand from 14 to 45 patterns for 95% coverage"
+}

@@ -1,0 +1,335 @@
+// Internal Audit (CAMP Deep Dive) - Minimalist Design
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// CAMP Pillars Grid
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.pillarCard {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    border-color: #1d1d1f;
+    background: #f5f5f7;
+  }
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pillarIcon {
+  width: 56px;
+  height: 56px;
+  background: #f5f5f7;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 28px;
+    height: 28px;
+    color: #1d1d1f;
+  }
+}
+
+.pillarInfo {
+  flex: 1;
+}
+
+.pillarTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+}
+
+.pillarScore {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.pillarProgress {
+  margin-bottom: 16px;
+  
+  .progressBar {
+    position: relative;
+    height: 6px;
+    background: #f5f5f7;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .progressFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #1d1d1f;
+    border-radius: 3px;
+    transition: width 0.5s cubic-bezier(0.25, 0, 0, 1);
+  }
+}
+
+.pillarMetrics {
+  display: grid;
+  gap: 12px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  
+  .metricLabel {
+    color: #86868b;
+    font-weight: 300;
+  }
+  
+  .metricValue {
+    color: #1d1d1f;
+    font-weight: 400;
+  }
+}
+
+// Deep Dive Questions
+.deepDiveSection {
+  background: #f5f5f7;
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 48px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.sectionSubtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.questionsGrid {
+  display: grid;
+  gap: 24px;
+}
+
+.questionCard {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.questionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.questionNumber {
+  width: 32px;
+  height: 32px;
+  background: #1d1d1f;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.questionText {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1d1d1f;
+}
+
+.answerSection {
+  padding-left: 44px;
+}
+
+.ratingScale {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ratingButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #d2d2d7;
+  background: white;
+  color: #86868b;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #f5f5f7;
+    border-color: #86868b;
+  }
+  
+  &.selected {
+    background: #1d1d1f;
+    color: white;
+    border-color: #1d1d1f;
+  }
+}
+
+.textInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d2d2d7;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #1d1d1f;
+  background: white;
+  resize: vertical;
+  min-height: 80px;
+  
+  &:focus {
+    outline: none;
+    border-color: #86868b;
+    background: #f5f5f7;
+  }
+  
+  &::placeholder {
+    color: #86868b;
+  }
+}
+
+// Overall Score
+.scoreSection {
+  text-align: center;
+  padding: 48px;
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 24px;
+  margin-bottom: 48px;
+}
+
+.overallScore {
+  font-size: 72px;
+  font-weight: 200;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.scoreLabel {
+  font-size: 18px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Actions
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  border: none;
+}
+
+.primaryButton {
+  background: #1d1d1f;
+  color: white;
+  
+  &:hover {
+    background: #000000;
+    transform: scale(1.05);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #1d1d1f;
+  border: 1px solid #d2d2d7;
+  
+  &:hover {
+    background: #f5f5f7;
+    border-color: #86868b;
+  }
+}
+
+// Remove all dark theme elements
+* {
+  background-image: none !important;
+  box-shadow: none !important;
+}

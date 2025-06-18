@@ -1,0 +1,17 @@
+{
+  "original_shape": [
+    100000,
+    50
+  ],
+  "enhanced_shape": [
+    100000,
+    83
+  ],
+  "new_features_count": 33,
+  "capital_features": 14,
+  "advantage_features": 6,
+  "market_features": 6,
+  "people_features": 10,
+  "null_values": 66174,
+  "success_rate": 0.40302
+}

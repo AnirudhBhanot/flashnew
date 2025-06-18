@@ -1,0 +1,55 @@
+.field {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    .question {
+      color: #000;
+    }
+  }
+}
+
+.question {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  margin-bottom: 48px;
+  transition: all 0.6s cubic-bezier(0.25, 0, 0, 1);
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+}
+
+.helper {
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #86868b;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.input {
+  transition: all 0.6s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.error {
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ff3b30;
+  margin-top: 16px;
+}

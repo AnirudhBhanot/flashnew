@@ -1,0 +1,213 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--apple-bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--apple-spacing-xl);
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.content {
+  background-color: var(--apple-bg-elevated);
+  border-radius: var(--apple-radius-xlarge);
+  padding: var(--apple-spacing-xxl);
+  box-shadow: var(--apple-shadow-large);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.title {
+  font-size: var(--apple-text-title1);
+  font-weight: var(--apple-font-weight-semibold);
+  color: var(--apple-label-primary);
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.subtitle {
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-secondary);
+}
+
+.progressContainer {
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: var(--apple-fill-quaternary);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--apple-blue) 0%,
+    var(--apple-blue-hover) 100%
+  );
+  border-radius: 4px;
+}
+
+.progressText {
+  display: block;
+  text-align: right;
+  font-size: var(--apple-text-caption1);
+  color: var(--apple-label-secondary);
+  font-weight: var(--apple-font-weight-medium);
+}
+
+.stepContainer {
+  text-align: center;
+  padding: var(--apple-spacing-xl) 0;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    var(--apple-fill-quaternary) 0%,
+    var(--apple-fill-tertiary) 100%
+  );
+  border-radius: 50%;
+  margin-bottom: var(--apple-spacing-l);
+  
+  svg {
+    color: var(--apple-blue);
+  }
+}
+
+.stepTitle {
+  font-size: var(--apple-text-headline);
+  font-weight: var(--apple-font-weight-semibold);
+  color: var(--apple-label-primary);
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.stepDescription {
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-secondary);
+  margin-bottom: var(--apple-spacing-l);
+}
+
+.stepProgress {
+  height: 4px;
+  background-color: var(--apple-fill-quaternary);
+  border-radius: 2px;
+  overflow: hidden;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.stepProgressFill {
+  height: 100%;
+  background-color: var(--apple-blue);
+  border-radius: 2px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: var(--apple-spacing-s);
+  margin-top: var(--apple-spacing-xl);
+}
+
+.step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--apple-fill-quaternary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--apple-text-caption1);
+  color: var(--apple-label-tertiary);
+  transition: all 0.3s ease-out;
+  
+  &.active {
+    background-color: var(--apple-blue);
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  &.completed {
+    background-color: var(--apple-green);
+    color: white;
+    
+    svg {
+      color: white;
+    }
+  }
+}
+
+.stepNumber {
+  font-weight: var(--apple-font-weight-medium);
+}
+
+.complete {
+  text-align: center;
+  margin-top: var(--apple-spacing-xl);
+  
+  svg {
+    color: var(--apple-green);
+    margin-bottom: var(--apple-spacing-m);
+  }
+  
+  h3 {
+    font-size: var(--apple-text-title3);
+    font-weight: var(--apple-font-weight-semibold);
+    color: var(--apple-label-primary);
+    margin-bottom: var(--apple-spacing-s);
+  }
+  
+  p {
+    font-size: var(--apple-text-body);
+    color: var(--apple-label-secondary);
+  }
+}
+
+// Error message
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-s);
+  padding: var(--apple-spacing-m);
+  margin-top: var(--apple-spacing-xl);
+  background-color: rgba(255, 59, 48, 0.1);
+  border-radius: var(--apple-radius-medium);
+  color: var(--apple-red);
+  font-size: var(--apple-text-footnote);
+  
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// Animation keyframes
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

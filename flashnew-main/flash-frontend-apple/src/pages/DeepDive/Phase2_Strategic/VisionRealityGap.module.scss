@@ -1,0 +1,343 @@
+// Vision-Reality Gap Analysis - Minimalist Design
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// Vision vs Reality Comparison
+.comparisonSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 64px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visionCard,
+.realityCard {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    height: 4px;
+    border-radius: 2px;
+  }
+}
+
+.visionCard::before {
+  background: #34c759;
+}
+
+.realityCard::before {
+  background: #ff9500;
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.cardIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: #f5f5f7;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 32px;
+    height: 32px;
+    color: #1d1d1f;
+  }
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.cardSubtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.metricsList {
+  display: grid;
+  gap: 20px;
+}
+
+.metricItem {
+  padding: 16px;
+  background: #f5f5f7;
+  border-radius: 12px;
+}
+
+.metricLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+  margin-bottom: 8px;
+}
+
+.metricValue {
+  font-size: 24px;
+  font-weight: 300;
+  color: #1d1d1f;
+}
+
+// Gap Analysis
+.gapAnalysis {
+  background: #f5f5f7;
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 48px;
+}
+
+.gapHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gapTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+}
+
+.gapScore {
+  font-size: 48px;
+  font-weight: 200;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  
+  &.low {
+    color: #34c759;
+  }
+  
+  &.medium {
+    color: #ff9500;
+  }
+  
+  &.high {
+    color: #ff3b30;
+  }
+}
+
+.gapLabel {
+  font-size: 16px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Gap Categories
+.gapCategories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.categoryCard {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.categoryName {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1d1d1f;
+}
+
+.categoryGap {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px 12px;
+  border-radius: 12px;
+  
+  &.low {
+    background: rgba(52, 199, 89, 0.1);
+    color: #34c759;
+  }
+  
+  &.medium {
+    background: rgba(255, 149, 0, 0.1);
+    color: #ff9500;
+  }
+  
+  &.high {
+    background: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+  }
+}
+
+.categoryDetails {
+  font-size: 14px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// Recommendations
+.recommendations {
+  margin-bottom: 48px;
+}
+
+.recommendationsHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.recommendationsTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.recommendationsList {
+  display: grid;
+  gap: 16px;
+}
+
+.recommendationItem {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateX(4px);
+  }
+}
+
+.recommendationIcon {
+  width: 40px;
+  height: 40px;
+  background: #f5f5f7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #1d1d1f;
+  }
+}
+
+.recommendationContent {
+  flex: 1;
+}
+
+.recommendationText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+}
+
+.recommendationImpact {
+  font-size: 14px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+// Actions
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  border: none;
+}
+
+.primaryButton {
+  background: #1d1d1f;
+  color: white;
+  
+  &:hover {
+    background: #000000;
+    transform: scale(1.05);
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #1d1d1f;
+  border: 1px solid #d2d2d7;
+  
+  &:hover {
+    background: #f5f5f7;
+    border-color: #86868b;
+  }
+}
+
+// Remove all dark theme elements
+* {
+  background-image: none !important;
+  box-shadow: none !important;
+}

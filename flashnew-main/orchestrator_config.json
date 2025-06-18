@@ -1,0 +1,20 @@
+{
+  "model_paths": {
+    "dna_analyzer": "models/production_v45/dna_analyzer.pkl",
+    "temporal_model": "models/production_v45/temporal_model.pkl",
+    "industry_model": "models/production_v45/industry_model.pkl",
+    "ensemble_model": "models/production_v45/ensemble_model.pkl"
+  },
+  "weights": {
+    "camp_evaluation": 0.6,
+    "pattern_analysis": 0.0,
+    "industry_specific": 0.25,
+    "temporal_prediction": 0.15
+  },
+  "pattern_config": {
+    "enabled": false,
+    "min_confidence": 0.6,
+    "top_patterns": 3,
+    "use_ensemble": false
+  }
+}

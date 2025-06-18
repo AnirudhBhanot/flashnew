@@ -1,0 +1,80 @@
+@import '../../../styles/variables.scss';
+
+.phase2Container {
+  padding: 24px;
+  background: $background-light;
+  min-height: 100vh;
+
+  .header {
+    margin-bottom: 32px;
+    text-align: center;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 16px;
+      color: $text-secondary;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    justify-content: center;
+
+    .navButton {
+      padding: 12px 24px;
+      background: white;
+      border: 2px solid $border-color;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      font-weight: 500;
+      color: $text-secondary;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      &.active {
+        background: $primary-color;
+        border-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  .content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    .header {
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    .navigation {
+      flex-direction: column;
+      
+      .navButton {
+        width: 100%;
+      }
+    }
+  }
+}

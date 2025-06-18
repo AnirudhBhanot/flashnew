@@ -1,0 +1,364 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background: white;
+  color: #1d1d1f;
+}
+
+// Executive Briefing
+.executiveBriefing {
+  background: #f5f5f7;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 48px;
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #424245;
+  }
+}
+
+// Phase Navigation
+.phaseNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  padding: 24px;
+  background: #f5f5f7;
+  border-radius: 16px;
+  border: 1px solid #d2d2d7;
+}
+
+.phaseButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  
+  &:hover:not(:disabled) {
+    background: var(--surface-secondary);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &.active {
+    background: var(--primary-light);
+    
+    .number {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .phaseInfo h4 {
+      color: var(--primary);
+    }
+  }
+  
+  .number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-secondary);
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .phaseInfo {
+    text-align: left;
+    
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 4px;
+    }
+    
+    p {
+      font-size: 14px;
+      color: #424245;
+    }
+  }
+}
+
+.phaseSeparator {
+  width: 40px;
+  height: 2px;
+  background: var(--border-primary);
+  margin: 0 8px;
+}
+
+// Loading & Error States
+.loading,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+  
+  svg {
+    color: var(--primary);
+  }
+  
+  p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.loading svg {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.error svg {
+  color: var(--error);
+}
+
+.retryButton {
+  padding: 8px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: var(--primary-dark);
+  }
+}
+
+// Phase Content
+.phaseContent {
+  .phaseHeader {
+    text-align: center;
+    margin-bottom: 48px;
+    
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 16px;
+    }
+    
+    .phaseSummary {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #424245;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Framework Analyses
+.frameworkAnalyses {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.frameworkSection {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  padding: 32px;
+  
+  .frameworkHeader {
+    margin-bottom: 24px;
+    
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+  }
+  
+  .analysisText {
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .keyInsights {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-primary);
+    
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+        
+        svg {
+          flex-shrink: 0;
+          margin-top: 2px;
+          color: var(--warning);
+        }
+        
+        span {
+          font-size: 15px;
+          line-height: 1.6;
+          color: var(--text-primary);
+        }
+      }
+    }
+  }
+}
+
+// Recommendations Section
+.recommendations {
+  background: var(--surface-secondary);
+  border-radius: 16px;
+  padding: 32px;
+  
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+  
+  .recommendationsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+    
+    .recommendation {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      
+      svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: var(--primary);
+      }
+      
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-primary);
+      }
+    }
+  }
+  
+  .nextSteps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    
+    .step {
+      display: flex;
+      gap: 16px;
+      
+      .stepNumber {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
+      
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-primary);
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .phaseNav {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .phaseButton {
+    width: 100%;
+  }
+  
+  .phaseSeparator {
+    width: 100%;
+    height: 1px;
+  }
+  
+  .frameworkSection {
+    padding: 24px;
+  }
+  
+  .recommendations {
+    padding: 24px;
+  }
+}

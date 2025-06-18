@@ -1,0 +1,50 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--background-secondary);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+  
+  &.error {
+    background: rgba(255, 59, 48, 0.1);
+    color: var(--color-error);
+  }
+  
+  &.success {
+    background: rgba(52, 199, 89, 0.1);
+    color: var(--color-success);
+  }
+}
+
+.text {
+  color: var(--text-secondary);
+  
+  .error & {
+    color: var(--color-error);
+  }
+  
+  .success & {
+    color: var(--color-success);
+  }
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

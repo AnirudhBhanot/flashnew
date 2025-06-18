@@ -1,0 +1,387 @@
+/* Apple Design System - Global Styles */
+
+:root {
+  /* Light Mode Colors */
+  --apple-bg-primary: #FFFFFF;
+  --apple-bg-secondary: #F2F2F7;
+  --apple-bg-tertiary: #FFFFFF;
+  --apple-bg-elevated: #FFFFFF;
+  
+  --apple-label-primary: #000000;
+  --apple-label-secondary: rgba(60, 60, 67, 0.6);
+  --apple-label-tertiary: rgba(60, 60, 67, 0.3);
+  --apple-label-quaternary: rgba(60, 60, 67, 0.18);
+  
+  --apple-separator: rgba(60, 60, 67, 0.12);
+  --apple-opaque-separator: #C6C6C8;
+  
+  /* Fill Colors */
+  --apple-fill-primary: rgba(120, 120, 128, 0.2);
+  --apple-fill-secondary: rgba(120, 120, 128, 0.16);
+  --apple-fill-tertiary: rgba(118, 118, 128, 0.12);
+  --apple-fill-quaternary: rgba(116, 116, 128, 0.08);
+  
+  /* System Colors */
+  --apple-blue: #007AFF;
+  --apple-green: #34C759;
+  --apple-indigo: #5856D6;
+  --apple-orange: #FF9500;
+  --apple-pink: #FF2D55;
+  --apple-purple: #AF52DE;
+  --apple-red: #FF3B30;
+  --apple-teal: #5AC8FA;
+  --apple-yellow: #FFCC00;
+  
+  /* Typography */
+  --apple-font-display: -apple-system-ui-serif, ui-serif;
+  --apple-font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --apple-font-rounded: -apple-system-ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --apple-font-mono: ui-monospace, "SF Mono", "Monaco", "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  
+  /* Font Sizes */
+  --apple-text-largeTitle: 34px;
+  --apple-text-title1: 28px;
+  --apple-text-title2: 22px;
+  --apple-text-title3: 20px;
+  --apple-text-headline: 17px;
+  --apple-text-body: 17px;
+  --apple-text-callout: 16px;
+  --apple-text-subheadline: 15px;
+  --apple-text-footnote: 13px;
+  --apple-text-caption1: 12px;
+  --apple-text-caption2: 11px;
+  
+  /* Font Weights */
+  --apple-font-weight-regular: 400;
+  --apple-font-weight-medium: 500;
+  --apple-font-weight-semibold: 600;
+  --apple-font-weight-bold: 700;
+  
+  /* Spacing */
+  --apple-spacing-xs: 4px;
+  --apple-spacing-s: 8px;
+  --apple-spacing-m: 16px;
+  --apple-spacing-l: 20px;
+  --apple-spacing-xl: 24px;
+  --apple-spacing-xxl: 32px;
+  
+  /* Safe Areas */
+  --apple-safe-area-top: env(safe-area-inset-top);
+  --apple-safe-area-bottom: env(safe-area-inset-bottom);
+  --apple-safe-area-left: env(safe-area-inset-left);
+  --apple-safe-area-right: env(safe-area-inset-right);
+  
+  /* Corner Radius */
+  --apple-radius-small: 6px;
+  --apple-radius-medium: 10px;
+  --apple-radius-large: 14px;
+  --apple-radius-xl: 20px;
+  
+  /* Shadows */
+  --apple-shadow-small: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --apple-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --apple-shadow-large: 0 10px 40px rgba(0, 0, 0, 0.12);
+  
+  /* Animation */
+  --apple-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --apple-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --apple-ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  
+  --apple-duration-instant: 0.1s;
+  --apple-duration-fast: 0.2s;
+  --apple-duration-regular: 0.3s;
+  --apple-duration-slow: 0.4s;
+  --apple-duration-sleepy: 0.5s;
+  
+  /* Z-Index */
+  --apple-z-dropdown: 1000;
+  --apple-z-modal: 2000;
+  --apple-z-toast: 3000;
+  --apple-z-tooltip: 4000;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --apple-bg-primary: #000000;
+    --apple-bg-secondary: #1C1C1E;
+    --apple-bg-tertiary: #2C2C2E;
+    --apple-bg-elevated: #1C1C1E;
+    
+    --apple-label-primary: #FFFFFF;
+    --apple-label-secondary: rgba(235, 235, 245, 0.6);
+    --apple-label-tertiary: rgba(235, 235, 245, 0.3);
+    --apple-label-quaternary: rgba(235, 235, 245, 0.18);
+    
+    --apple-separator: rgba(84, 84, 88, 0.6);
+    --apple-opaque-separator: #38383A;
+    
+    /* Fill Colors */
+    --apple-fill-primary: rgba(120, 120, 128, 0.36);
+    --apple-fill-secondary: rgba(120, 120, 128, 0.32);
+    --apple-fill-tertiary: rgba(118, 118, 128, 0.24);
+    --apple-fill-quaternary: rgba(116, 116, 128, 0.18);
+    
+    --apple-shadow-small: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --apple-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --apple-shadow-large: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--apple-font-text);
+  font-size: var(--apple-text-body);
+  line-height: 1.47059;
+  font-weight: var(--apple-font-weight-regular);
+  color: var(--apple-label-primary);
+  background-color: var(--apple-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--apple-blue);
+  text-decoration: none;
+  transition: opacity var(--apple-duration-fast) var(--apple-ease-out);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* Typography Classes */
+.largeTitle {
+  font-size: var(--apple-text-largeTitle);
+  font-weight: var(--apple-font-weight-bold);
+  line-height: 1.21;
+  letter-spacing: -0.02em;
+}
+
+.title1 {
+  font-size: var(--apple-text-title1);
+  font-weight: var(--apple-font-weight-semibold);
+  line-height: 1.21;
+  letter-spacing: -0.02em;
+}
+
+.title2 {
+  font-size: var(--apple-text-title2);
+  font-weight: var(--apple-font-weight-semibold);
+  line-height: 1.27;
+  letter-spacing: -0.02em;
+}
+
+.title3 {
+  font-size: var(--apple-text-title3);
+  font-weight: var(--apple-font-weight-semibold);
+  line-height: 1.23;
+  letter-spacing: -0.01em;
+}
+
+.headline {
+  font-size: var(--apple-text-headline);
+  font-weight: var(--apple-font-weight-semibold);
+  line-height: 1.41;
+}
+
+.body {
+  font-size: var(--apple-text-body);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: 1.47;
+}
+
+.callout {
+  font-size: var(--apple-text-callout);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: 1.38;
+}
+
+.subheadline {
+  font-size: var(--apple-text-subheadline);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: 1.43;
+}
+
+.footnote {
+  font-size: var(--apple-text-footnote);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: 1.38;
+}
+
+.caption1 {
+  font-size: var(--apple-text-caption1);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: 1.33;
+}
+
+.caption2 {
+  font-size: var(--apple-text-caption2);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: 1.36;
+}
+
+/* Utility Classes */
+.text-secondary {
+  color: var(--apple-label-secondary);
+}
+
+.text-tertiary {
+  color: var(--apple-label-tertiary);
+}
+
+.bg-secondary {
+  background-color: var(--apple-bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--apple-bg-tertiary);
+}
+
+.separator {
+  border-color: var(--apple-separator);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid var(--apple-blue);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--apple-blue);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--apple-separator);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-label-tertiary);
+}
+
+/* App Container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form stacking context fix */
+form > * {
+  position: relative;
+}
+
+/* Ensure dropdowns appear above other form elements */
+.dropdown-open {
+  z-index: 9999 !important;
+}

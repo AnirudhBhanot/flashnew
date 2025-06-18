@@ -1,0 +1,674 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+// McKinsey/BCG color palette
+$mckinsey-blue: #1D1D1F;  // Changed from blue to dark gray for minimalist design
+$mckinsey-dark: #1D1D1F;
+$mckinsey-gray: #86868B;
+$mckinsey-light-gray: #F5F5F7;
+$mckinsey-white: #FFFFFF;
+$success-green: #34C759;
+$warning-orange: #FF9500;
+$danger-red: #FF3B30;
+
+// Professional typography
+$font-professional: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+
+.container {
+  width: 100%;
+  background: $mckinsey-white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+// Navigation
+.navigation {
+  display: flex;
+  background: $mckinsey-light-gray;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+}
+
+.navButton {
+  flex: 1;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  font-family: $font-professional;
+  font-size: 15px;
+  font-weight: 500;
+  color: $mckinsey-gray;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+    color: $mckinsey-dark;
+  }
+  
+  &.active {
+    color: $mckinsey-blue;
+    background: $mckinsey-white;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: $mckinsey-blue;
+    }
+  }
+}
+
+// Sections
+.section {
+  padding: 48px;
+  
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: $mckinsey-dark;
+    margin: 0 0 32px 0;
+    font-family: $font-professional;
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: $mckinsey-dark;
+    margin: 0 0 16px 0;
+  }
+  
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: $mckinsey-dark;
+    margin: 0 0 12px 0;
+  }
+}
+
+// Executive Summary
+.executiveSummary {
+  .situationBox {
+    background: $mckinsey-light-gray;
+    padding: 32px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: $mckinsey-dark;
+      margin: 0;
+    }
+  }
+  
+  .keyInsights {
+    margin-bottom: 32px;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 12px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: $mckinsey-dark;
+        
+        &::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          color: $mckinsey-blue;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  .recommendationBox {
+    background: $mckinsey-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    border-radius: 12px;
+    
+    h3 {
+      color: $mckinsey-dark;
+    }
+    
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      color: $mckinsey-dark;
+    }
+    
+    .valueMetrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      
+      .metric {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        
+        .label {
+          font-size: 14px;
+          color: $mckinsey-gray;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        
+        .value {
+          font-size: 32px;
+          font-weight: 600;
+          color: $mckinsey-dark;
+        }
+      }
+    }
+  }
+}
+
+// Situation Assessment
+.assessmentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.assessmentCard {
+  background: $mckinsey-light-gray;
+  padding: 24px;
+  border-radius: 12px;
+  
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: $mckinsey-dark;
+    margin: 0;
+  }
+}
+
+.competitiveDynamics {
+  margin-bottom: 48px;
+  
+  .dynamicsTable {
+    background: $mckinsey-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .dynamicRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 3fr;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    align-items: center;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .force {
+      font-weight: 500;
+      color: $mckinsey-dark;
+    }
+    
+    .intensity, .trend {
+      text-align: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      
+      &.low {
+        background: rgba($success-green, 0.1);
+        color: $success-green;
+      }
+      
+      &.medium {
+        background: rgba($warning-orange, 0.1);
+        color: $warning-orange;
+      }
+      
+      &.high {
+        background: rgba($danger-red, 0.1);
+        color: $danger-red;
+      }
+      
+      &.improving {
+        background: rgba($success-green, 0.1);
+        color: $success-green;
+      }
+      
+      &.stable {
+        background: rgba($mckinsey-gray, 0.1);
+        color: $mckinsey-gray;
+      }
+      
+      &.deteriorating {
+        background: rgba($danger-red, 0.1);
+        color: $danger-red;
+      }
+    }
+    
+    .implication {
+      font-size: 14px;
+      color: $mckinsey-gray;
+    }
+  }
+}
+
+.riskSection {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      position: relative;
+      padding: 16px 16px 16px 48px;
+      margin-bottom: 12px;
+      background: rgba($danger-red, 0.05);
+      border-radius: 8px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: $mckinsey-dark;
+      
+      &::before {
+        content: '⚠';
+        position: absolute;
+        left: 16px;
+        color: $danger-red;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// Strategic Options
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.optionCard {
+  background: $mckinsey-light-gray;
+  padding: 32px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  
+  h3 {
+    color: $mckinsey-blue;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: $mckinsey-gray;
+    margin: 0 0 24px 0;
+  }
+  
+  .optionMetrics {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 20px;
+    margin-bottom: 20px;
+    
+    .metricRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: 15px;
+      
+      span:first-child {
+        color: $mckinsey-gray;
+      }
+      
+      span:last-child {
+        font-weight: 600;
+        color: $mckinsey-dark;
+        
+        &.low {
+          color: $success-green;
+        }
+        
+        &.medium {
+          color: $warning-orange;
+        }
+        
+        &.high {
+          color: $danger-red;
+        }
+      }
+    }
+  }
+  
+  .confidenceInterval {
+    background: rgba($mckinsey-blue, 0.05);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    
+    span:first-child {
+      display: block;
+      color: $mckinsey-gray;
+      margin-bottom: 4px;
+    }
+    
+    span:last-child {
+      color: $mckinsey-blue;
+      font-weight: 600;
+    }
+  }
+}
+
+.valueWaterfall {
+  .waterfallChart {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    padding: 32px;
+    background: $mckinsey-light-gray;
+    border-radius: 12px;
+    overflow-x: auto;
+  }
+  
+  .waterfallBar {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    
+    .barLabel {
+      font-size: 14px;
+      font-weight: 600;
+      color: $mckinsey-dark;
+      margin-bottom: 8px;
+    }
+    
+    .barValue {
+      background: $mckinsey-blue;
+      color: $mckinsey-white;
+      padding: 12px;
+      border-radius: 8px 8px 0 0;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .barTimeline {
+      font-size: 13px;
+      color: $mckinsey-gray;
+      margin-bottom: 4px;
+    }
+    
+    .barOwner {
+      font-size: 13px;
+      font-weight: 500;
+      color: $mckinsey-blue;
+    }
+  }
+}
+
+// Implementation Roadmap
+.roadmapTimeline {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $mckinsey-blue;
+  }
+}
+
+.phaseCard {
+  position: relative;
+  margin-bottom: 48px;
+  margin-left: 64px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    background: $mckinsey-blue;
+    border: 3px solid $mckinsey-white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .phaseHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    
+    h3 {
+      color: $mckinsey-blue;
+    }
+    
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      color: $mckinsey-gray;
+    }
+  }
+  
+  .phaseContent {
+    background: $mckinsey-light-gray;
+    padding: 32px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    
+    .investment {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      
+      span {
+        font-size: 28px;
+        font-weight: 600;
+        color: $mckinsey-blue;
+      }
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 8px;
+        font-size: 15px;
+        line-height: 1.5;
+        color: $mckinsey-dark;
+        
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: $success-green;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Financial Projections
+.scenarioAnalysis {
+  .scenarioTables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  .scenario {
+    background: $mckinsey-light-gray;
+    padding: 24px;
+    border-radius: 12px;
+    
+    h4 {
+      color: $mckinsey-blue;
+      margin-bottom: 20px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      thead {
+        tr {
+          border-bottom: 2px solid $mckinsey-blue;
+        }
+        
+        th {
+          padding: 12px 8px;
+          text-align: left;
+          font-size: 13px;
+          font-weight: 600;
+          color: $mckinsey-gray;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+      
+      tbody {
+        tr {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        
+        td {
+          padding: 12px 8px;
+          font-size: 15px;
+          color: $mckinsey-dark;
+          
+          &.negative {
+            color: $danger-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Loading state
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  gap: 24px;
+  
+  p {
+    font-size: 17px;
+    color: $mckinsey-gray;
+  }
+}
+
+.loadingIcon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  border: 3px solid $mckinsey-light-gray;
+  border-top-color: $mckinsey-blue;
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .assessmentGrid,
+  .optionsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scenarioTables {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 24px;
+  }
+  
+  .navigation {
+    flex-wrap: wrap;
+    
+    .navButton {
+      flex: 1 1 50%;
+      padding: 16px;
+      font-size: 14px;
+    }
+  }
+  
+  .executiveSummary {
+    .valueMetrics {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .phaseContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .dynamicRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    
+    > div {
+      text-align: left !important;
+    }
+  }
+}

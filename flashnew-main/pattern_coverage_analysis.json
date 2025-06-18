@@ -1,0 +1,254 @@
+{
+  "total_patterns": 45,
+  "patterns_with_matches": 34,
+  "total_coverage": 0.5742,
+  "uncovered_startups": 42580,
+  "pattern_distribution": {
+    "VIRAL_CONSUMER_GROWTH": {
+      "count": 295,
+      "percentage": 0.00295,
+      "success_rate": 0.7898305084745763,
+      "category": "growth_dynamics"
+    },
+    "PLG_BOTTOM_UP": {
+      "count": 1163,
+      "percentage": 0.01163,
+      "success_rate": 0.7420464316423044,
+      "category": "growth_dynamics"
+    },
+    "SALES_LED_GROWTH": {
+      "count": 6369,
+      "percentage": 0.06369,
+      "success_rate": 0.7173810645313236,
+      "category": "growth_dynamics"
+    },
+    "COMMUNITY_DRIVEN_GROWTH": {
+      "count": 2269,
+      "percentage": 0.02269,
+      "success_rate": 0.7338034376377258,
+      "category": "growth_dynamics"
+    },
+    "SUBSCRIPTION_RECURRING": {
+      "count": 20187,
+      "percentage": 0.20187,
+      "success_rate": 0.6844503888641205,
+      "category": "business_model"
+    },
+    "TRANSACTIONAL_MARKETPLACE": {
+      "count": 576,
+      "percentage": 0.00576,
+      "success_rate": 0.6458333333333334,
+      "category": "business_model"
+    },
+    "FREEMIUM_CONVERSION": {
+      "count": 6983,
+      "percentage": 0.06983,
+      "success_rate": 0.7685808391808678,
+      "category": "business_model"
+    },
+    "HARDWARE_AS_SERVICE": {
+      "count": 169,
+      "percentage": 0.00169,
+      "success_rate": 0.34911242603550297,
+      "category": "business_model"
+    },
+    "DATA_MONETIZATION": {
+      "count": 629,
+      "percentage": 0.00629,
+      "success_rate": 0.8441971383147854,
+      "category": "business_model"
+    },
+    "AI_ML_CORE": {
+      "count": 416,
+      "percentage": 0.00416,
+      "success_rate": 0.7668269230769231,
+      "category": "technology_depth"
+    },
+    "BLOCKCHAIN_WEB3": {
+      "count": 163,
+      "percentage": 0.00163,
+      "success_rate": 0.7239263803680982,
+      "category": "technology_depth"
+    },
+    "BIOTECH_LIFESCIENCES": {
+      "count": 5,
+      "percentage": 5e-05,
+      "success_rate": 0.8,
+      "category": "technology_depth"
+    },
+    "HARDWARE_ROBOTICS": {
+      "count": 37,
+      "percentage": 0.00037,
+      "success_rate": 0.5675675675675675,
+      "category": "technology_depth"
+    },
+    "B2B_ENTERPRISE": {
+      "count": 1311,
+      "percentage": 0.01311,
+      "success_rate": 0.6109839816933639,
+      "category": "market_approach"
+    },
+    "B2B_SMB_FOCUSED": {
+      "count": 19870,
+      "percentage": 0.1987,
+      "success_rate": 0.6905888273779567,
+      "category": "market_approach"
+    },
+    "B2C_MASS_MARKET": {
+      "count": 3194,
+      "percentage": 0.03194,
+      "success_rate": 0.8293675641828429,
+      "category": "market_approach"
+    },
+    "B2B2C_EMBEDDED": {
+      "count": 65,
+      "percentage": 0.00065,
+      "success_rate": 0.24615384615384617,
+      "category": "market_approach"
+    },
+    "B2G_GOVERNMENT": {
+      "count": 175,
+      "percentage": 0.00175,
+      "success_rate": 0.7885714285714286,
+      "category": "market_approach"
+    },
+    "FINTECH_PAYMENTS": {
+      "count": 1551,
+      "percentage": 0.01551,
+      "success_rate": 0.624113475177305,
+      "category": "industry_vertical"
+    },
+    "HEALTHTECH_DIGITAL": {
+      "count": 325,
+      "percentage": 0.00325,
+      "success_rate": 0.6215384615384615,
+      "category": "industry_vertical"
+    },
+    "EDTECH_LEARNING": {
+      "count": 6122,
+      "percentage": 0.06122,
+      "success_rate": 0.7463247304802352,
+      "category": "industry_vertical"
+    },
+    "PROPTECH_REAL_ESTATE": {
+      "count": 7526,
+      "percentage": 0.07526,
+      "success_rate": 0.5778634068562317,
+      "category": "industry_vertical"
+    },
+    "AGTECH_FOOD": {
+      "count": 13842,
+      "percentage": 0.13842,
+      "success_rate": 0.5116312671579252,
+      "category": "industry_vertical"
+    },
+    "CLIMATE_SUSTAINABILITY": {
+      "count": 1389,
+      "percentage": 0.01389,
+      "success_rate": 0.6205903527717782,
+      "category": "industry_vertical"
+    },
+    "RETAIL_COMMERCE": {
+      "count": 5483,
+      "percentage": 0.05483,
+      "success_rate": 0.8236366952398322,
+      "category": "industry_vertical"
+    },
+    "ASSET_HEAVY_OPERATIONS": {
+      "count": 509,
+      "percentage": 0.00509,
+      "success_rate": 0.6856581532416502,
+      "category": "operational_model"
+    },
+    "HYBRID_DIGITAL_PHYSICAL": {
+      "count": 10670,
+      "percentage": 0.1067,
+      "success_rate": 0.48106841611996254,
+      "category": "operational_model"
+    },
+    "SERVICE_ENABLED_TECH": {
+      "count": 8025,
+      "percentage": 0.08025,
+      "success_rate": 0.6753894080996885,
+      "category": "operational_model"
+    },
+    "VC_HYPERGROWTH": {
+      "count": 141,
+      "percentage": 0.00141,
+      "success_rate": 0.3191489361702128,
+      "category": "funding_profile"
+    },
+    "GRANT_RESEARCH_FUNDED": {
+      "count": 88,
+      "percentage": 0.00088,
+      "success_rate": 0.7840909090909091,
+      "category": "funding_profile"
+    },
+    "REVENUE_BASED_FUNDING": {
+      "count": 37494,
+      "percentage": 0.37494,
+      "success_rate": 0.6321811489838374,
+      "category": "funding_profile"
+    },
+    "PRODUCT_MARKET_FIT": {
+      "count": 18464,
+      "percentage": 0.18464,
+      "success_rate": 0.4560225303292894,
+      "category": "maturity_stage"
+    },
+    "SCALING_GROWTH": {
+      "count": 4373,
+      "percentage": 0.04373,
+      "success_rate": 0.8488451863709124,
+      "category": "maturity_stage"
+    },
+    "MARKET_LEADER": {
+      "count": 2,
+      "percentage": 2e-05,
+      "success_rate": 1.0,
+      "category": "maturity_stage"
+    }
+  },
+  "category_distribution": {
+    "growth_dynamics": {
+      "patterns": 4,
+      "startups": 10096,
+      "percentage": 0.10096
+    },
+    "business_model": {
+      "patterns": 5,
+      "startups": 28544,
+      "percentage": 0.28544
+    },
+    "technology_depth": {
+      "patterns": 4,
+      "startups": 621,
+      "percentage": 0.00621
+    },
+    "market_approach": {
+      "patterns": 5,
+      "startups": 24615,
+      "percentage": 0.24615
+    },
+    "industry_vertical": {
+      "patterns": 7,
+      "startups": 36238,
+      "percentage": 0.36238
+    },
+    "operational_model": {
+      "patterns": 3,
+      "startups": 19204,
+      "percentage": 0.19204
+    },
+    "funding_profile": {
+      "patterns": 3,
+      "startups": 37723,
+      "percentage": 0.37723
+    },
+    "maturity_stage": {
+      "patterns": 3,
+      "startups": 22839,
+      "percentage": 0.22839
+    }
+  }
+}

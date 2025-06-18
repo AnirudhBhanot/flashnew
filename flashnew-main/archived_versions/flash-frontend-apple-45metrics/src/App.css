@@ -1,0 +1,6 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--apple-bg-primary);
+  color: var(--apple-label-primary);
+  transition: background-color var(--apple-duration-regular) var(--apple-ease-in-out);
+}

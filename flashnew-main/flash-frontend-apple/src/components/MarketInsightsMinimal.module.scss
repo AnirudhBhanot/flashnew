@@ -1,0 +1,201 @@
+.container {
+  padding: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 32px 0;
+}
+
+.industryTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.industryTab {
+  background: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    border-color: #999;
+    color: #000;
+  }
+
+  &.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+}
+
+.contentTabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.contentTab {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.active {
+    color: #000;
+    font-weight: 500;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #000;
+    }
+  }
+}
+
+.content {
+  min-height: 200px;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.metricCard {
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #999;
+  }
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #666;
+}
+
+.metricValue {
+  font-size: 24px;
+  font-weight: 300;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+.insight {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+
+  p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.listNumber {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.listBullet {
+  font-size: 14px;
+  color: #666;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.listText {
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.position {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.positionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 12px 0;
+}
+
+.positionText {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}

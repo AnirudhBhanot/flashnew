@@ -1,0 +1,491 @@
+.pattern-analysis-container {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.pattern-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pattern-icon {
+  font-size: 2rem;
+}
+
+/* Pattern Adjusted Probability */
+.pattern-adjusted-probability {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.probability-comparison {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.probability-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prob-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.prob-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00C851 0%, #33B5E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modifier-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.modifier-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00C851;
+}
+
+.modifier-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Pattern Sections */
+.pattern-section {
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pattern-section:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pattern-section.primary {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pattern-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pattern-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pattern-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.pattern-category {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.pattern-confidence {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.pattern-confidence.very-high {
+  background: rgba(0, 200, 81, 0.2);
+  color: #00C851;
+}
+
+.pattern-confidence.high {
+  background: rgba(232, 234, 237, 0.2);
+  color: #33B5E5;
+}
+
+.pattern-confidence.medium {
+  background: rgba(255, 187, 51, 0.2);
+  color: #FFBB33;
+}
+
+.pattern-confidence.low {
+  background: rgba(255, 68, 68, 0.2);
+  color: #FF4444;
+}
+
+.expand-icon {
+  color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+/* Pattern Details */
+.pattern-details {
+  padding: 0 1.5rem 1.5rem;
+  overflow: hidden;
+}
+
+.success-rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 200, 81, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.rate-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.rate-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00C851;
+}
+
+/* Match Breakdown */
+.match-breakdown {
+  margin-bottom: 1.5rem;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.breakdown-label {
+  flex: 0 0 120px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.breakdown-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.breakdown-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007AFF 0%, #00C851 100%);
+  border-radius: 3px;
+}
+
+.breakdown-value {
+  flex: 0 0 50px;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Similar Companies */
+.similar-companies {
+  margin-bottom: 1.5rem;
+}
+
+.similar-companies h4 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.company-tag {
+  padding: 0.4rem 0.8rem;
+  background: rgba(232, 234, 237, 0.2);
+  color: #33B5E5;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Pattern Gaps & Recommendations */
+.pattern-gaps,
+.pattern-recommendations {
+  margin-bottom: 1rem;
+}
+
+.pattern-gaps h4,
+.pattern-recommendations h4 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.pattern-gaps ul,
+.pattern-recommendations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pattern-gaps li,
+.pattern-recommendations li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pattern-gaps li:before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+}
+
+.pattern-recommendations li:before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+}
+
+/* Pattern Tags */
+.pattern-tags-section {
+  margin: 2rem 0;
+}
+
+.pattern-tags-section h4 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.pattern-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pattern-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pattern-tag.tag-growth {
+  background: rgba(0, 200, 81, 0.2);
+  color: #00C851;
+  border-color: rgba(0, 200, 81, 0.3);
+}
+
+.pattern-tag.tag-efficiency {
+  background: rgba(232, 234, 237, 0.2);
+  color: #33B5E5;
+  border-color: rgba(232, 234, 237, 0.3);
+}
+
+.pattern-tag.tag-position {
+  background: rgba(170, 102, 204, 0.2);
+  color: #AA66CC;
+  border-color: rgba(170, 102, 204, 0.3);
+}
+
+.pattern-tag.tag-tech {
+  background: rgba(255, 187, 51, 0.2);
+  color: #FFBB33;
+  border-color: rgba(255, 187, 51, 0.3);
+}
+
+.pattern-tag.tag-risk {
+  background: rgba(255, 68, 68, 0.2);
+  color: #FF4444;
+  border-color: rgba(255, 68, 68, 0.3);
+}
+
+/* Evolution Section */
+.current-stage {
+  padding: 0.3rem 0.8rem;
+  background: rgba(170, 102, 204, 0.2);
+  color: #AA66CC;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.evolution-paths h4 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.evolution-path {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.path-name {
+  flex: 0 0 200px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.path-probability {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.probability-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.probability-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #AA66CC 0%, #FF8800 100%);
+}
+
+.probability-text {
+  flex: 0 0 50px;
+  text-align: right;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Secondary Patterns */
+.secondary-pattern {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.secondary-pattern:last-child {
+  border-bottom: none;
+}
+
+/* Pattern Quality */
+.pattern-quality {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quality-indicator {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quality-label {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.quality-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.quality-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.quality-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pattern-analysis-container {
+    padding: 1rem;
+  }
+
+  .pattern-title {
+    font-size: 1.5rem;
+  }
+
+  .probability-comparison {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pattern-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .path-name {
+    flex: 0 0 150px;
+  }
+
+  .pattern-quality {
+    grid-template-columns: 1fr;
+  }
+}

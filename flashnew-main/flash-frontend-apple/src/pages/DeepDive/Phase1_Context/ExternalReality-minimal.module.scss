@@ -1,0 +1,271 @@
+// External Reality Analysis - Minimalist Design
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// Progress Section
+.progressSection {
+  background: #f5f5f7;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #86868b;
+}
+
+.percentage {
+  font-weight: 400;
+  color: #1d1d1f;
+}
+
+.progressBar {
+  position: relative;
+  height: 6px;
+  background: white;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #1d1d1f;
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.25, 0, 0, 1);
+}
+
+// Force Analysis
+.forceAnalysis {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.forceCard {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateY(-2px);
+  }
+}
+
+.forceHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.forceIcon {
+  width: 48px;
+  height: 48px;
+  background: #f5f5f7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #1d1d1f;
+  }
+}
+
+.forceTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1d1d1f;
+}
+
+.forceContent {
+  margin-bottom: 24px;
+}
+
+.intensitySection {
+  padding-top: 24px;
+  border-top: 1px solid #f5f5f7;
+}
+
+.intensityLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+  margin-bottom: 12px;
+}
+
+.intensityScale {
+  display: flex;
+  gap: 8px;
+}
+
+.intensityDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f5f5f7;
+  transition: all 0.3s ease;
+  
+  &.filled {
+    background: #1d1d1f;
+  }
+}
+
+// Form styles
+.formSection {
+  margin-bottom: 24px;
+}
+
+.formItem {
+  margin-bottom: 20px;
+  
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #86868b;
+    margin-bottom: 8px;
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #1d1d1f;
+    background: white;
+    transition: all 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: #86868b;
+      background: #f5f5f7;
+    }
+    
+    &::placeholder {
+      color: #86868b;
+    }
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+// Actions
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  border: none;
+}
+
+.primaryButton {
+  background: #1d1d1f;
+  color: white;
+  
+  &:hover {
+    background: #000000;
+    transform: scale(1.05);
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #1d1d1f;
+  border: 1px solid #d2d2d7;
+  
+  &:hover {
+    background: #f5f5f7;
+    border-color: #86868b;
+  }
+}
+
+// Remove all dark theme elements
+* {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+// Override Ant Design components
+:global {
+  .ant-form-item-label > label {
+    color: #1d1d1f !important;
+  }
+  
+  .ant-input,
+  .ant-input-number,
+  .ant-select-selector {
+    background: white !important;
+    border-color: #d2d2d7 !important;
+    color: #1d1d1f !important;
+    
+    &:hover {
+      border-color: #86868b !important;
+    }
+    
+    &:focus {
+      border-color: #1d1d1f !important;
+      box-shadow: none !important;
+    }
+  }
+  
+  .ant-btn-primary {
+    background: #1d1d1f !important;
+    border-color: #1d1d1f !important;
+    
+    &:hover {
+      background: #000000 !important;
+      border-color: #000000 !important;
+    }
+  }
+}

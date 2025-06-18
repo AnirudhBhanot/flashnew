@@ -1,0 +1,49 @@
+2025-06-03 20:44:31,971 - INFO - Loading real patterns dataset...
+2025-06-03 20:44:34,684 - INFO - Loaded 200,000 samples with 20.0% success rate
+2025-06-03 20:44:34,812 - INFO - Encoding categorical features...
+2025-06-03 20:44:34,989 - INFO - Handling missing values...
+2025-06-03 20:44:35,874 - INFO - Prepared 200,000 samples with 44 features
+2025-06-03 20:44:35,888 - INFO - 
+Splitting data into train/validation/test sets...
+2025-06-03 20:44:36,209 - INFO -   Train: 120,000 samples (60%)
+2025-06-03 20:44:36,209 - INFO -   Val: 40,000 samples (20%)
+2025-06-03 20:44:36,209 - INFO -   Test: 40,000 samples (20%)
+2025-06-03 20:44:36,209 - INFO - 
+Scaling features...
+2025-06-03 20:44:36,404 - INFO - Class imbalance - Positive: 24,000 (20.0%), Negative: 96,000 (80.0%)
+2025-06-03 20:44:36,404 - INFO - 
+1. Training XGBoost (COMPLETE - No shortcuts)...
+2025-06-03 20:44:36,404 - INFO -   Running grid search for XGBoost...
+
+================================================================================
+COMPLETE MODEL TRAINING ON REAL PATTERNS DATASET
+NO SHORTCUTS - FULL OPTIMIZATION
+================================================================================
+
+This will take 10-20 minutes for complete training...
+
+Traceback (most recent call last):
+  File "/Users/sf/Desktop/FLASH/train_complete_real_patterns.py", line 511, in <module>
+    main()
+    ~~~~^^
+  File "/Users/sf/Desktop/FLASH/train_complete_real_patterns.py", line 477, in main
+    trainer.train_with_cross_validation(X_train_df, y_train, X_val_df, y_val)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sf/Desktop/FLASH/train_complete_real_patterns.py", line 137, in train_with_cross_validation
+    xgb_grid.fit(X_train, y_train)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/model_selection/_search.py", line 933, in fit
+    cv_orig = check_cv(self.cv, y, classifier=is_classifier(estimator))
+                                              ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/base.py", line 1237, in is_classifier
+    return get_tags(estimator).estimator_type == "classifier"
+           ~~~~~~~~^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/utils/_tags.py", line 430, in get_tags
+    sklearn_tags_provider[klass] = klass.__sklearn_tags__(estimator)  # type: ignore[attr-defined]
+                                   ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/base.py", line 540, in __sklearn_tags__
+    tags = super().__sklearn_tags__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute '__sklearn_tags__'

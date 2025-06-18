@@ -1,0 +1,81 @@
+// Minimal Design System Variables
+
+// Typography Scale
+$font-size-hero: 160px;          // Main success score
+$font-size-display: 64px;        // Special emphasis (e.g., What-If result)
+$font-size-xlarge: 48px;         // Major values
+$font-size-large: 40px;          // Primary values across all components
+$font-size-medium: 32px;         // Secondary values
+$font-size-title: 24px;          // Section titles, labels
+$font-size-body: 20px;           // Body text, descriptions
+$font-size-small: 16px;          // Supporting text
+$font-size-caption: 13px;        // Small labels, captions
+
+// Font Weights
+$font-weight-thin: 100;
+$font-weight-light: 200;         // Primary values
+$font-weight-regular: 300;       // Labels, body text
+$font-weight-medium: 400;        // Emphasis
+$font-weight-semibold: 500;      // Strong emphasis
+
+// Colors
+$color-primary: #000;            // Primary text
+$color-secondary: #666;          // Secondary text
+$color-tertiary: #999;           // Tertiary text, captions
+$color-border: #f5f5f5;          // Standard border
+$color-background: #f8f8f8;      // Light background
+
+// Spacing Scale (multiples of 8)
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+$spacing-xxxl: 80px;
+$spacing-huge: 120px;
+
+// Letter Spacing
+$letter-spacing-tight: -0.04em;   // Very large text
+$letter-spacing-normal: -0.02em;  // Normal text
+$letter-spacing-wide: 0.1em;      // Uppercase text
+
+// Mixins
+@mixin label-text {
+  font-size: $font-size-title;
+  font-weight: $font-weight-regular;
+  color: $color-secondary;
+  letter-spacing: $letter-spacing-normal;
+}
+
+@mixin value-text {
+  font-size: $font-size-large;
+  font-weight: $font-weight-light;
+  color: $color-primary;
+  letter-spacing: $letter-spacing-normal;
+}
+
+@mixin caption-text {
+  font-size: $font-size-caption;
+  font-weight: $font-weight-medium;
+  color: $color-tertiary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+@mixin section-spacing {
+  padding: $spacing-xl 0;
+}
+
+@mixin item-spacing {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

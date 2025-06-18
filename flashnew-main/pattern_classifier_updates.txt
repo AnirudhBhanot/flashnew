@@ -1,0 +1,20 @@
+
+# Add this method to PatternClassifierSimple class
+
+def predict_with_alignment(self, features: Dict) -> Dict:
+    """Predict with automatic feature alignment"""
+    
+    # Ensure we have all required features
+    aligned_features = {}
+    for feature in ALL_FEATURES:
+        if feature in features:
+            aligned_features[feature] = features[feature]
+        else:
+            # Use appropriate defaults
+            if feature in CATEGORICAL_FEATURES:
+                aligned_features[feature] = 'unknown'
+            else:
+                aligned_features[feature] = 0
+    
+    # Now call regular predict
+    return self.predict(aligned_features)

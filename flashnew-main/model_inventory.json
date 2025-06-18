@@ -1,0 +1,33 @@
+{
+  "models": [
+    "improved_model_pipeline.pkl",
+    "stacking_ensemble.pkl",
+    "temporal_prediction_model.pkl",
+    "fixed_v2_ensemble.pkl",
+    "data_preprocessor.pkl"
+  ],
+  "models/production_v45": [
+    "dna_analyzer.pkl",
+    "temporal_model.pkl",
+    "industry_model.pkl",
+    "ensemble_model.pkl",
+    "industry_model_scaler.pkl"
+  ],
+  "models/pattern_v2_simple": [
+    "metadata.json"
+  ],
+  "models/v2_enhanced": [
+    "meta_nn.pkl",
+    "meta_logistic.pkl",
+    "deep_model.cbm",
+    "conservative_model.cbm",
+    "aggressive_model.cbm"
+  ],
+  "models/dna_analyzer": [
+    "scaler.pkl",
+    "clustering.pkl",
+    "pattern_nn.pkl",
+    "dna_pattern_model.pkl",
+    "success_classifier.pkl"
+  ]
+}

@@ -1,0 +1,129 @@
+// Apple Design System Variables
+// This file contains all the design tokens for the Apple UI
+
+// Colors
+:root {
+  // Primary Colors
+  --color-primary: #007AFF;
+  --color-primary-light: #5AC8FA;
+  --color-primary-dark: #0051D5;
+  
+  // Semantic Colors
+  --color-success: #34C759;
+  --color-warning: #FF9500;
+  --color-danger: #FF3B30;
+  --color-info: #5856D6;
+  
+  // Background Colors
+  --color-success-bg: rgba(52, 199, 89, 0.15);
+  --color-warning-bg: rgba(255, 149, 0, 0.15);
+  --color-danger-bg: rgba(255, 59, 48, 0.15);
+  --color-info-bg: rgba(88, 86, 214, 0.15);
+  
+  // Text Colors
+  --text-primary: #000000;
+  --text-secondary: #3C3C43;
+  --text-tertiary: #48484A;
+  --text-quaternary: #8E8E93;
+  
+  // Background Colors
+  --background-primary: #FFFFFF;
+  --background-secondary: #F2F2F7;
+  --background-tertiary: #E5E5EA;
+  
+  // Card & Surface Colors
+  --card-background: #FFFFFF;
+  --card-background-secondary: #F9F9F9;
+  
+  // Border Colors
+  --border-color: #C6C6C8;
+  --border-color-light: #E5E5EA;
+  
+  // Typography
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+  // Font Sizes
+  --font-size-xs: 0.75rem;    // 12px
+  --font-size-sm: 0.875rem;   // 14px
+  --font-size-md: 1rem;       // 16px
+  --font-size-lg: 1.125rem;   // 18px
+  --font-size-xl: 1.25rem;    // 20px
+  --font-size-2xl: 1.5rem;    // 24px
+  --font-size-3xl: 1.875rem;  // 30px
+  --font-size-4xl: 2.25rem;   // 36px
+
+  // Font Weights
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  // Line Heights
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  // Spacing
+  --spacing-xs: 0.25rem;   // 4px
+  --spacing-sm: 0.5rem;    // 8px
+  --spacing-md: 0.75rem;   // 12px
+  --spacing-lg: 1rem;      // 16px
+  --spacing-xl: 1.5rem;    // 24px
+  --spacing-2xl: 2rem;     // 32px
+  --spacing-3xl: 3rem;     // 48px
+  --spacing-4xl: 4rem;     // 64px
+
+  // Radius
+  --radius-sm: 0.25rem;    // 4px
+  --radius-md: 0.5rem;     // 8px
+  --radius-lg: 0.75rem;    // 12px
+  --radius-xl: 1rem;       // 16px
+  --radius-full: 9999px;
+
+  // Shadows
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+  // Z-index
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  // Transitions
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+  
+  // Dark Mode Colors
+  @media (prefers-color-scheme: dark) {
+    --text-primary: #FFFFFF;
+    --text-secondary: #EBEBF5;
+    --text-tertiary: #C7C7CC;
+    --text-quaternary: #8E8E93;
+    
+    --background-primary: #000000;
+    --background-secondary: #1C1C1E;
+    --background-tertiary: #2C2C2E;
+    
+    --card-background: #1C1C1E;
+    --card-background-secondary: #2C2C2E;
+    
+    --border-color: #38383A;
+    --border-color-light: #48484A;
+  }
+}
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;

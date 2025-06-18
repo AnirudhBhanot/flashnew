@@ -1,0 +1,101 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--apple-bg-primary);
+}
+
+.nav {
+  padding: var(--apple-spacing-m) var(--apple-spacing-xl);
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--apple-spacing-xl);
+}
+
+.title {
+  font-size: var(--apple-text-title1);
+  font-weight: var(--apple-font-weight-semibold);
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.subtitle {
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-secondary);
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-xl);
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.section {
+  background-color: var(--apple-fill-quaternary);
+  border-radius: var(--apple-radius-large);
+  padding: var(--apple-spacing-l);
+  border: 1px solid var(--apple-separator);
+}
+
+.sectionTitle {
+  font-size: var(--apple-text-headline);
+  font-weight: var(--apple-font-weight-semibold);
+  margin-bottom: var(--apple-spacing-m);
+  color: var(--apple-label-primary);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--apple-spacing-m);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-xs);
+}
+
+.label {
+  font-size: var(--apple-text-caption1);
+  color: var(--apple-label-secondary);
+}
+
+.value {
+  font-size: var(--apple-text-body);
+  font-weight: var(--apple-font-weight-medium);
+  color: var(--apple-label-primary);
+}
+
+.disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apple-spacing-m);
+  padding: var(--apple-spacing-m);
+  background-color: var(--apple-fill-quaternary);
+  border-radius: var(--apple-radius-medium);
+  margin-bottom: var(--apple-spacing-xl);
+  
+  svg {
+    flex-shrink: 0;
+    color: var(--apple-blue);
+  }
+  
+  p {
+    font-size: var(--apple-text-footnote);
+    color: var(--apple-label-secondary);
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: var(--apple-spacing-m);
+  
+  > * {
+    flex: 1;
+  }
+}

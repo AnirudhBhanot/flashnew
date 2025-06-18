@@ -1,0 +1,26 @@
+/* Print Investment Memo - Hidden on screen, visible on print */
+.print-investment-memo {
+  display: none;
+}
+
+@media print {
+  /* Hide everything else when printing */
+  body > div:not(.print-investment-memo),
+  .analysis-results,
+  .app-v3 {
+    display: none !important;
+  }
+
+  /* Show only the investment memo */
+  .print-investment-memo {
+    display: block !important;
+    background: white;
+    color: black;
+  }
+
+  /* Reset print styles for better printing */
+  .print-investment-memo * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

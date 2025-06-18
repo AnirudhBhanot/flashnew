@@ -1,0 +1,103 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--apple-bg-primary);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--apple-spacing-m) var(--apple-spacing-xl);
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--apple-spacing-xl);
+}
+
+.title {
+  font-size: var(--apple-text-title1);
+  font-weight: var(--apple-font-weight-semibold);
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.subtitle {
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-secondary);
+  margin-bottom: var(--apple-spacing-xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-xl);
+  margin-bottom: var(--apple-spacing-xxl);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-l);
+  padding: var(--apple-spacing-xl);
+  background-color: var(--apple-fill-tertiary);
+  border-radius: var(--apple-radius-medium);
+  margin-bottom: var(--apple-spacing-xl);
+}
+
+.sectionTitle {
+  font-size: var(--apple-text-headline);
+  font-weight: var(--apple-font-weight-semibold);
+  margin-bottom: var(--apple-spacing-s);
+}
+
+.marketSizeFields {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--apple-spacing-m);
+  
+  > :first-child {
+    flex: 1;
+  }
+  
+  button {
+    margin-bottom: 4px;
+  }
+}
+
+.advancedSection {
+  margin: calc(-1 * var(--apple-spacing-m)) 0;
+}
+
+.marketSizeGroup,
+.marketDynamicsGroup,
+.riskGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apple-spacing-l);
+  padding: var(--apple-spacing-xl);
+  background-color: var(--apple-fill-tertiary);
+  border-radius: var(--apple-radius-medium);
+}
+
+.groupTitle {
+  font-size: var(--apple-text-headline);
+  font-weight: var(--apple-font-weight-semibold);
+  margin-bottom: var(--apple-spacing-s);
+  color: var(--apple-label-primary);
+}
+
+.actions {
+  display: flex;
+  gap: var(--apple-spacing-m);
+  
+  > * {
+    flex: 1;
+  }
+}

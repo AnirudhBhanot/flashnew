@@ -1,0 +1,12 @@
+{
+  "enable_patterns": true,
+  "pattern_weight": 0.25,
+  "model_weights": {
+    "base_ensemble": 0.55,
+    "temporal": 0.15,
+    "industry_specific": 0.05,
+    "pattern": 0.25
+  },
+  "use_pattern_insights": true,
+  "pattern_success_modifier": true
+}

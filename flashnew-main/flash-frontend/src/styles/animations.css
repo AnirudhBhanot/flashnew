@@ -1,0 +1,530 @@
+/* FLASH Platform - Micro-interactions & Animations
+   ================================================= */
+
+/* Keyframe Animations
+   =================== */
+
+/* Ripple effect for buttons */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Subtle bounce */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Scale in */
+@keyframes scale-in {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide up fade */
+@keyframes slide-up-fade {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Success check */
+@keyframes success-check {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Error shake */
+@keyframes error-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+/* Skeleton loading */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate */
+@keyframes rotate-smooth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Interactions
+   =================== */
+
+/* Base button with ripple support */
+.button-interactive {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal) var(--ease-out-expo);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.button-interactive::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-slow), height var(--transition-slow);
+}
+
+.button-interactive:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Hover lift effect */
+.button-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.button-interactive:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Loading state */
+.button-loading {
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.button-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: rotate-smooth 0.8s linear infinite;
+}
+
+/* Card Interactions
+   ================= */
+
+.card-interactive {
+  transition: all var(--transition-normal) var(--ease-out-expo);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Card with glow */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Form Interactions
+   ================= */
+
+/* Floating label */
+.form-group {
+  position: relative;
+}
+
+.form-label-float {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: all var(--transition-fast) var(--ease-out-expo);
+  pointer-events: none;
+  color: var(--color-text-secondary);
+}
+
+.form-input:focus ~ .form-label-float,
+.form-input:not(:placeholder-shown) ~ .form-label-float {
+  top: 0;
+  transform: translateY(-100%);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+}
+
+/* Input focus effect */
+.form-input-interactive {
+  border: 2px solid transparent;
+  background-color: var(--color-background-elevated);
+  transition: all var(--transition-fast) var(--ease-out-expo);
+}
+
+.form-input-interactive:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-background);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Validation states */
+.form-input-success {
+  border-color: var(--color-success) !important;
+}
+
+.form-input-error {
+  border-color: var(--color-danger) !important;
+  animation: error-shake 0.5s ease-in-out;
+}
+
+/* Data Visualization Interactions
+   =============================== */
+
+/* Chart hover */
+.chart-interactive path,
+.chart-interactive circle,
+.chart-interactive rect {
+  transition: all var(--transition-fast) var(--ease-out-expo);
+}
+
+.chart-interactive:hover path {
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Tooltip */
+.tooltip-interactive {
+  position: absolute;
+  padding: 8px 12px;
+  background: var(--color-background-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: var(--font-size-sm);
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: all var(--transition-fast) var(--ease-spring);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.tooltip-interactive.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Navigation Interactions
+   ======================= */
+
+/* Tab indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: var(--color-primary);
+  transition: all var(--transition-normal) var(--ease-spring);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Navigation pill */
+.nav-pill {
+  position: relative;
+  transition: all var(--transition-fast) var(--ease-out-expo);
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  background: var(--color-primary);
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity var(--transition-fast);
+}
+
+.nav-pill:hover::before {
+  opacity: 0.2;
+}
+
+.nav-pill.active::before {
+  opacity: 0.3;
+}
+
+/* Loading States
+   ============== */
+
+/* Skeleton screen */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-background-elevated);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* Progress indicator */
+.progress-smooth {
+  transition: width var(--transition-slow) var(--ease-out-expo);
+}
+
+/* Scroll Animations
+   ================= */
+
+/* Fade in on scroll */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--transition-slow) var(--ease-out-expo);
+}
+
+.scroll-fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--transition-normal) var(--ease-out-expo);
+}
+
+.stagger-children.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.in-view > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children.in-view > *:nth-child(2) { transition-delay: 50ms; }
+.stagger-children.in-view > *:nth-child(3) { transition-delay: 100ms; }
+.stagger-children.in-view > *:nth-child(4) { transition-delay: 150ms; }
+.stagger-children.in-view > *:nth-child(5) { transition-delay: 200ms; }
+.stagger-children.in-view > *:nth-child(6) { transition-delay: 250ms; }
+
+/* Success/Error Animations
+   ======================== */
+
+/* Success state */
+.success-animate {
+  animation: scale-in 0.3s var(--ease-spring);
+}
+
+.success-checkmark {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: success-check 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Error state */
+.error-animate {
+  animation: error-shake 0.5s ease-in-out;
+}
+
+/* Special Effects
+   =============== */
+
+/* Magnetic hover */
+.magnetic-hover {
+  transition: transform var(--transition-fast) var(--ease-out-expo);
+}
+
+/* Glass morphism enhancement */
+.glass-interactive {
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal) var(--ease-out-expo);
+}
+
+.glass-interactive:hover {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient animation */
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Number counter animation */
+.number-animate {
+  display: inline-block;
+  animation: scale-in 0.6s var(--ease-spring);
+}
+
+/* Pulse animation for notifications */
+.pulse-notify {
+  position: relative;
+}
+
+.pulse-notify::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--color-danger);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+  }
+}
+
+/* Hover parallax */
+.parallax-hover {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-fast) var(--ease-out-expo);
+}
+
+.parallax-hover:hover {
+  transform: rotateX(5deg) rotateY(-5deg) translateZ(10px);
+}
+
+/* Accessibility
+   ============= */
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .scroll-fade-in,
+  .stagger-children > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Focus visible only for keyboard navigation */
+.focus-visible-only:focus {
+  outline: none;
+}
+
+.focus-visible-only:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

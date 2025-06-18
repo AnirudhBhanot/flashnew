@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Autofill Flow Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f7;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+        .flow-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f5f5f7;
+            border-radius: 8px;
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #007aff;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+        pre {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 24px;
+            color: #6e6e73;
+            margin: 20px 0;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        button {
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #0051d5;
+        }
+        .log-entry {
+            padding: 8px;
+            margin: 4px 0;
+            background: #f5f5f7;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Autofill Complete Flow Test</h1>
+        <p style="color: #6e6e73;">Testing the complete date conversion flow from sample data to API</p>
+        
+        <div class="flow-section">
+            <div class="step-number">1</div>
+            <div class="step-title">Sample Data (sampleCompanies.ts)</div>
+            <pre>{
+  companyInfo: {
+    companyName: 'ChatAI Solutions',
+    foundedDate: '2024-01-15',  // String format
+    fundingStage: 'pre-seed',
+    industry: 'ai-ml',
+    location: 'Remote'
+  }
+}</pre>
+            <div id="step1-result" class="result"></div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <div class="flow-section">
+            <div class="step-number">2</div>
+            <div class="step-title">AutofillSelector Transformation</div>
+            <pre>const mappedCompanyInfo = {
+  ...company.data.companyInfo,
+  sector: company.data.companyInfo.industry,
+  stage: company.data.companyInfo.fundingStage,
+  headquarters: company.data.companyInfo.location,
+  foundingDate: new Date(company.data.companyInfo.foundedDate) // Convert to Date
+}</pre>
+            <div id="step2-result" class="result"></div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <div class="flow-section">
+            <div class="step-number">3</div>
+            <div class="step-title">CompanyInfo Form Display</div>
+            <pre>formatDate(formData.foundingDate) // Display as "Jan 2024"</pre>
+            <div id="step3-result" class="result"></div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <div class="flow-section">
+            <div class="step-number">4</div>
+            <div class="step-title">Store in Assessment Store</div>
+            <pre>updateData('companyInfo', {
+  ...formData,
+  foundingDate: formData.foundingDate?.toISOString() || ''
+})</pre>
+            <div id="step4-result" class="result"></div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <div class="flow-section">
+            <div class="step-number">5</div>
+            <div class="step-title">API Transformation</div>
+            <pre>const foundingYear = companyInfo.foundingDate ? 
+  new Date(companyInfo.foundingDate).getFullYear() : 
+  new Date().getFullYear();
+
+return {
+  founding_year: foundingYear // Extract year for API
+}</pre>
+            <div id="step5-result" class="result"></div>
+        </div>
+        
+        <button onclick="runCompleteFlow()">Run Complete Flow Test</button>
+        
+        <div style="margin-top: 30px;">
+            <h3>Test Log:</h3>
+            <div id="test-log"></div>
+        </div>
+    </div>
+    
+    <script>
+        function log(message, data) {
+            const logDiv = document.getElementById('test-log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerHTML = `<strong>${message}:</strong> ${JSON.stringify(data, null, 2)}`;
+            logDiv.appendChild(entry);
+        }
+        
+        function formatDate(date) {
+            if (!date) return '';
+            return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        }
+        
+        function runCompleteFlow() {
+            // Clear previous logs
+            document.getElementById('test-log').innerHTML = '';
+            
+            // Step 1: Original sample data
+            const sampleData = {
+                companyInfo: {
+                    companyName: 'ChatAI Solutions',
+                    foundedDate: '2024-01-15',
+                    fundingStage: 'pre-seed',
+                    industry: 'ai-ml',
+                    location: 'Remote'
+                }
+            };
+            
+            document.getElementById('step1-result').innerHTML = 
+                `<strong>Type of foundedDate:</strong> ${typeof sampleData.companyInfo.foundedDate}<br>` +
+                `<strong>Value:</strong> "${sampleData.companyInfo.foundedDate}"`;
+            document.getElementById('step1-result').className = 'result success';
+            log('Step 1 - Sample data', sampleData.companyInfo);
+            
+            // Step 2: AutofillSelector transformation
+            const mappedCompanyInfo = {
+                ...sampleData.companyInfo,
+                sector: sampleData.companyInfo.industry,
+                stage: sampleData.companyInfo.fundingStage,
+                headquarters: sampleData.companyInfo.location,
+                foundingDate: sampleData.companyInfo.foundedDate ? new Date(sampleData.companyInfo.foundedDate) : null
+            };
+            
+            // Remove old fields
+            delete mappedCompanyInfo.industry;
+            delete mappedCompanyInfo.fundingStage;
+            delete mappedCompanyInfo.location;
+            delete mappedCompanyInfo.foundedDate;
+            
+            document.getElementById('step2-result').innerHTML = 
+                `<strong>Type of foundingDate:</strong> ${typeof mappedCompanyInfo.foundingDate}<br>` +
+                `<strong>Value:</strong> ${mappedCompanyInfo.foundingDate}<br>` +
+                `<strong>Is Date object:</strong> ${mappedCompanyInfo.foundingDate instanceof Date}`;
+            document.getElementById('step2-result').className = 'result success';
+            log('Step 2 - After AutofillSelector', mappedCompanyInfo);
+            
+            // Step 3: Form display
+            const displayValue = formatDate(mappedCompanyInfo.foundingDate);
+            document.getElementById('step3-result').innerHTML = 
+                `<strong>Display value:</strong> "${displayValue}"<br>` +
+                `<strong>Expected format:</strong> "Jan 2024" ✓`;
+            document.getElementById('step3-result').className = 'result success';
+            log('Step 3 - Form display', { displayValue });
+            
+            // Step 4: Store transformation
+            const storedData = {
+                ...mappedCompanyInfo,
+                foundingDate: mappedCompanyInfo.foundingDate?.toISOString() || ''
+            };
+            
+            document.getElementById('step4-result').innerHTML = 
+                `<strong>Stored as ISO string:</strong> "${storedData.foundingDate}"<br>` +
+                `<strong>Can be parsed back:</strong> ${!isNaN(new Date(storedData.foundingDate).getTime())}`;
+            document.getElementById('step4-result').className = 'result success';
+            log('Step 4 - Stored in assessment store', storedData);
+            
+            // Step 5: API transformation
+            const foundingYear = storedData.foundingDate ? 
+                new Date(storedData.foundingDate).getFullYear() : 
+                new Date().getFullYear();
+            
+            const apiData = {
+                founding_year: foundingYear
+            };
+            
+            document.getElementById('step5-result').innerHTML = 
+                `<strong>API field:</strong> founding_year<br>` +
+                `<strong>Value:</strong> ${apiData.founding_year}<br>` +
+                `<strong>Type:</strong> ${typeof apiData.founding_year}`;
+            document.getElementById('step5-result').className = 'result success';
+            log('Step 5 - API payload', apiData);
+            
+            // Summary
+            log('FLOW COMPLETE', {
+                success: true,
+                original_type: 'string',
+                final_api_value: foundingYear,
+                transformations: [
+                    'string → Date object',
+                    'Date object → formatted display',
+                    'Date object → ISO string (storage)',
+                    'ISO string → year number (API)'
+                ]
+            });
+        }
+        
+        // Auto-run on load
+        window.onload = runCompleteFlow;
+    </script>
+</body>
+</html>

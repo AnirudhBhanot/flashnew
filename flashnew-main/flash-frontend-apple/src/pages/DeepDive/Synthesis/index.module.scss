@@ -1,0 +1,440 @@
+// Synthesis - Executive Summary - Minimalist Design
+.synthesisContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 48px 96px;
+  background: white;
+  color: #1d1d1f;
+
+  @media (max-width: 768px) {
+    padding: 100px 24px 48px;
+  }
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: #1d1d1f;
+}
+
+.pageSubtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// Executive Summary Card
+.executiveSummary {
+  background: #f5f5f7;
+  border-radius: 24px;
+  padding: 64px;
+  margin-bottom: 80px;
+  
+  @media (max-width: 768px) {
+    padding: 40px 32px;
+  }
+}
+
+.summaryHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.summaryIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 32px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 40px;
+    height: 40px;
+    color: #1d1d1f;
+  }
+}
+
+.summaryTitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+}
+
+.summaryScore {
+  font-size: 72px;
+  font-weight: 200;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.summaryLabel {
+  font-size: 16px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Key Findings
+.keyFindings {
+  margin-bottom: 80px;
+}
+
+.findingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.findingCard {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateY(-2px);
+  }
+}
+
+.findingIcon {
+  width: 48px;
+  height: 48px;
+  background: #f5f5f7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #1d1d1f;
+  }
+}
+
+.findingTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+}
+
+.findingContent {
+  font-size: 16px;
+  font-weight: 300;
+  color: #424245;
+  line-height: 1.6;
+}
+
+// Strategic Priorities
+.prioritiesSection {
+  margin-bottom: 80px;
+}
+
+.prioritiesHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.prioritiesTitle {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.prioritiesSubtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.prioritiesList {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.priorityItem {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateX(8px);
+  }
+}
+
+.priorityNumber {
+  width: 48px;
+  height: 48px;
+  background: #1d1d1f;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+.priorityContent {
+  flex: 1;
+}
+
+.priorityTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.priorityDescription {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.priorityTimeframe {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #f5f5f7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+}
+
+// Roadmap Timeline
+.roadmapSection {
+  margin-bottom: 80px;
+}
+
+.roadmapHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.roadmapTitle {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: #d2d2d7;
+  }
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 64px;
+  margin-bottom: 48px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 2px solid #1d1d1f;
+  border-radius: 50%;
+  
+  &.completed {
+    background: #34c759;
+    border-color: #34c759;
+  }
+  
+  &.current {
+    background: #1d1d1f;
+  }
+}
+
+.timelineContent {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateX(4px);
+  }
+}
+
+.timelinePhase {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.timelineTitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.timelineDescription {
+  font-size: 14px;
+  font-weight: 300;
+  color: #424245;
+  line-height: 1.5;
+}
+
+// Action Buttons
+.actionSection {
+  text-align: center;
+  padding: 64px;
+  background: #f5f5f7;
+  border-radius: 24px;
+}
+
+.actionTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+}
+
+.actionDescription {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  margin-bottom: 32px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  background: #1d1d1f;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  &:hover {
+    background: #000000;
+    transform: scale(1.05);
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #1d1d1f;
+  border: 1px solid #d2d2d7;
+  padding: 16px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  &:hover {
+    background: #f5f5f7;
+    border-color: #86868b;
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Remove all dark theme elements
+* {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+// Override Ant Design components
+:global {
+  .ant-card {
+    background: white !important;
+    border: 1px solid #d2d2d7 !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+  }
+  
+  .ant-statistic {
+    .ant-statistic-title {
+      color: #86868b !important;
+      font-weight: 400 !important;
+    }
+    
+    .ant-statistic-content {
+      color: #1d1d1f !important;
+      font-weight: 200 !important;
+    }
+  }
+}

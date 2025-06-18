@@ -1,0 +1,121 @@
+.container {
+  margin-bottom: var(--apple-spacing-m);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-m);
+  
+  &.rightLabel {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+}
+
+.label {
+  font-size: var(--apple-text-body);
+  color: var(--apple-label-primary);
+  cursor: pointer;
+  user-select: none;
+  flex: 1;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color: var(--apple-fill-tertiary);
+  border-radius: 999px;
+  transition: all 0.3s ease-out;
+  outline: none;
+  
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+  }
+  
+  &:hover:not(.disabled) {
+    background-color: var(--apple-fill-secondary);
+  }
+  
+  &.on {
+    background-color: var(--apple-green);
+    
+    &:hover:not(.disabled) {
+      background-color: var(--apple-green-hover);
+    }
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  // Size variants
+  &.small {
+    width: 42px;
+    height: 26px;
+    
+    .thumb {
+      width: 22px;
+      height: 22px;
+      margin: 2px;
+    }
+  }
+  
+  &.medium {
+    width: 51px;
+    height: 31px;
+    
+    .thumb {
+      width: 27px;
+      height: 27px;
+      margin: 2px;
+    }
+  }
+  
+  &.large {
+    width: 60px;
+    height: 36px;
+    
+    .thumb {
+      width: 32px;
+      height: 32px;
+      margin: 2px;
+    }
+  }
+}
+
+.thumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease-out;
+  
+  .switch:active:not(.disabled) & {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.helper {
+  margin-top: var(--apple-spacing-xs);
+  margin-left: calc(51px + var(--apple-spacing-m)); // Default to medium switch width
+  font-size: var(--apple-text-caption1);
+  color: var(--apple-label-secondary);
+  line-height: 1.4;
+  
+  .rightLabel & {
+    margin-left: 0;
+    margin-right: calc(51px + var(--apple-spacing-m));
+  }
+}
+
+// Green color definition if not already in design system
+:root {
+  --apple-green: #34c759;
+  --apple-green-hover: #2fb351;
+}

@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.axisGrid {
+  pointer-events: none;
+}
+
+.gridCircle {
+  opacity: 0.3;
+}
+
+.gridLabel {
+  user-select: none;
+}
+
+.axis {
+  pointer-events: none;
+}
+
+.axisLabel {
+  user-select: none;
+  cursor: default;
+}
+
+.dataArea {
+  pointer-events: all;
+}
+
+.radarArea {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    fill-opacity: 0.3;
+  }
+}
+
+.radarCircle {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    r: 6;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  pointer-events: none;
+  z-index: 1000;
+  
+  div:first-child {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  div:last-child {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+  }
+}

@@ -1,0 +1,242 @@
+// Base container styles (matching MinimalSelect)
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+
+  &:hover {
+    border-bottom-color: #d2d2d7;
+  }
+
+  &:focus {
+    border-bottom-color: #86868b;
+  }
+
+  svg {
+    color: #86868b;
+    transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  }
+}
+
+.value {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+.placeholder {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #d2d2d7;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+// iOS-style date picker specific styles
+.datePickerDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.pickerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #f5f5f7;
+  border-bottom: 1px solid #e5e5e7;
+}
+
+.cancelButton,
+.doneButton {
+  background: none;
+  border: none;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.cancelButton {
+  color: #86868b;
+}
+
+.doneButton {
+  color: #007AFF;
+  font-weight: 600;
+}
+
+.pickerTitle {
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.pickerBodyWrapper {
+  position: relative;
+  background: #ffffff;
+  height: 216px;
+}
+
+.pickerBody {
+  display: flex;
+  height: 100%;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.pickerColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pickerLabel {
+  padding: 8px 0 4px;
+  text-align: center;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #86868b;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.pickerWheel {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 80px 0; // Space for selection area
+  position: relative;
+  
+  // Hide scrollbar but keep functionality
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  // Gradient overlays for iOS-style fade effect
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 60px;
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.8) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  
+  &::after {
+    bottom: 0;
+    background: linear-gradient(to top, 
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.8) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+.pickerOption {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  background: transparent;
+  border: none;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1d1d1f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  
+  &:hover {
+    background: #f5f5f7;
+  }
+  
+  &.selected {
+    font-weight: 600;
+    color: #007AFF;
+  }
+}
+
+.pickerDivider {
+  width: 1px;
+  background: #e5e5e7;
+  margin: 12px 0;
+}
+
+.selectionIndicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 18px);
+  height: 36px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.02);
+  z-index: 2;
+}

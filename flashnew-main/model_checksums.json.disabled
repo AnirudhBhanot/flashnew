@@ -1,0 +1,6 @@
+{
+  "models/production_v45/dna_analyzer.pkl": "a50fec8bd822cb13a0b82549f5ba37cda9bde0b6367134d0ac50a29d687f709c",
+  "models/production_v45/temporal_model.pkl": "4d343fc3dc851739ca748f0d55781571ae48c4543a2f23307c1e7b5314b90da9",
+  "models/production_v45/industry_model.pkl": "4d343fc3dc851739ca748f0d55781571ae48c4543a2f23307c1e7b5314b90da9",
+  "models/production_v45/ensemble_model.pkl": "a50fec8bd822cb13a0b82549f5ba37cda9bde0b6367134d0ac50a29d687f709c"
+}

@@ -1,0 +1,360 @@
+/* Progress Component Styles
+   ======================== */
+
+/* Progress Bar */
+.progress {
+  width: 100%;
+  background: var(--color-background-tertiary);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-small {
+  height: 4px;
+}
+
+.progress-medium {
+  height: 8px;
+}
+
+.progress-large {
+  height: 16px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--color-primary);
+  position: relative;
+  transition: width var(--transition-normal) var(--ease-out-expo);
+}
+
+.progress-bar-default {
+  background: var(--color-primary);
+}
+
+.progress-bar-success {
+  background: var(--color-success);
+}
+
+.progress-bar-warning {
+  background: var(--color-warning);
+}
+
+.progress-bar-danger {
+  background: var(--color-danger);
+}
+
+.progress-bar-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+}
+
+.progress-label {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Striped Progress */
+.progress-striped .progress-bar {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+}
+
+.progress-animated .progress-bar {
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20px 0;
+  }
+}
+
+/* Indeterminate Progress */
+.progress-bar-indeterminate {
+  width: 30% !important;
+  animation: indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+/* Circular Progress */
+.circular-progress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress-svg {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-bg {
+  fill: none;
+  stroke: var(--color-background-tertiary);
+}
+
+.circular-progress-bar {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--transition-normal) var(--ease-out-expo);
+}
+
+.circular-progress-bar-default {
+  stroke: var(--color-primary);
+}
+
+.circular-progress-bar-success {
+  stroke: var(--color-success);
+}
+
+.circular-progress-bar-warning {
+  stroke: var(--color-warning);
+}
+
+.circular-progress-bar-danger {
+  stroke: var(--color-danger);
+}
+
+.circular-progress-label {
+  position: absolute;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Step Progress */
+.step-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  opacity: 0.5;
+  transition: all var(--transition-normal) var(--ease-out-expo);
+}
+
+.step-active {
+  opacity: 1;
+}
+
+.step-completed {
+  opacity: 0.9;
+}
+
+.step-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-background-tertiary);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal) var(--ease-out-expo);
+}
+
+.step-active .step-indicator {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1);
+  animation: pulse-subtle 2s infinite;
+}
+
+.step-completed .step-indicator {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.step-number {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.step-active .step-number,
+.step-completed .step-number,
+.step-check {
+  color: white;
+}
+
+.step-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 120px;
+}
+
+.step-active .step-label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  margin: 0 -20px;
+  z-index: -1;
+  transition: background var(--transition-normal);
+}
+
+.step-connector-completed {
+  background: var(--color-success);
+}
+
+/* Skeleton */
+.skeleton {
+  background: var(--color-background-tertiary);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-text {
+  border-radius: 4px;
+}
+
+.skeleton-rect {
+  border-radius: 8px;
+}
+
+.skeleton-circle {
+  border-radius: 50%;
+}
+
+.skeleton-pulse {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.skeleton-wave::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: skeleton-wave 2s infinite;
+}
+
+@keyframes skeleton-wave {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Loading Dots */
+.loading-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.loading-dots-small .loading-dot {
+  width: 4px;
+  height: 4px;
+}
+
+.loading-dots-medium .loading-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.loading-dots-large .loading-dot {
+  width: 12px;
+  height: 12px;
+}
+
+.loading-dot {
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Progress with gradient animation */
+.progress-gradient-animated .progress-bar {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .progress-animated .progress-bar,
+  .progress-bar-indeterminate,
+  .skeleton-pulse,
+  .skeleton-wave::after,
+  .loading-dot {
+    animation: none;
+  }
+  
+  .progress-bar,
+  .circular-progress-bar,
+  .step,
+  .step-indicator {
+    transition: none;
+  }
+}

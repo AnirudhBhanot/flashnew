@@ -1,0 +1,322 @@
+// Phase 2 Strategic Analysis - Minimalist Design
+.phase2Container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 48px 96px;
+  background: white;
+  color: #1d1d1f;
+
+  @media (max-width: 768px) {
+    padding: 100px 24px 48px;
+  }
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: #1d1d1f;
+}
+
+.pageSubtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// Framework Sections
+.frameworkSection {
+  margin-bottom: 120px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.frameworkHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.frameworkTitle {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.frameworkDescription {
+  font-size: 18px;
+  font-weight: 300;
+  color: #86868b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+// Matrix Grid
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.matrixCell {
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  padding: 40px;
+  min-height: 280px;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #f5f5f7;
+    transform: translateY(-4px);
+    border-color: #86868b;
+  }
+}
+
+.cellHeader {
+  margin-bottom: 24px;
+}
+
+.cellTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.cellSubtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.cellContent {
+  font-size: 16px;
+  font-weight: 300;
+  color: #424245;
+  line-height: 1.6;
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    
+    &:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #86868b;
+    }
+  }
+}
+
+// Vision Reality Gap
+.visionSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.visionCard {
+  text-align: center;
+}
+
+.visionIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: #f5f5f7;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 40px;
+    height: 40px;
+    color: #1d1d1f;
+  }
+}
+
+.visionTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+}
+
+.visionContent {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+// Gap Analysis
+.gapAnalysis {
+  background: #f5f5f7;
+  border-radius: 24px;
+  padding: 48px;
+  margin-top: 64px;
+}
+
+.gapHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gapTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.gapSubtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+.gapItems {
+  display: grid;
+  gap: 24px;
+}
+
+.gapItem {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.gapIndicator {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 500;
+  
+  &.low {
+    background: rgba(52, 199, 89, 0.1);
+    color: #34c759;
+  }
+  
+  &.medium {
+    background: rgba(255, 149, 0, 0.1);
+    color: #ff9500;
+  }
+  
+  &.high {
+    background: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+  }
+}
+
+.gapDetails {
+  flex: 1;
+}
+
+.gapItemTitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+}
+
+.gapItemDescription {
+  font-size: 14px;
+  font-weight: 300;
+  color: #86868b;
+}
+
+// Progress Footer
+.progressFooter {
+  margin-top: 120px;
+  text-align: center;
+  padding-top: 48px;
+  border-top: 1px solid #f5f5f7;
+}
+
+.nextButton {
+  background: #1d1d1f;
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0, 0, 1);
+  
+  &:hover {
+    background: #000000;
+    transform: scale(1.05);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+// Remove all dark theme elements
+* {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+// Override Ant Design components
+:global {
+  .ant-card {
+    background: white !important;
+    border: 1px solid #d2d2d7 !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+  }
+  
+  .ant-tabs-nav {
+    background: transparent !important;
+    border-bottom: 1px solid #f5f5f7 !important;
+  }
+  
+  .ant-tabs-tab {
+    color: #86868b !important;
+    font-weight: 400 !important;
+    
+    &.ant-tabs-tab-active {
+      color: #1d1d1f !important;
+    }
+  }
+}
